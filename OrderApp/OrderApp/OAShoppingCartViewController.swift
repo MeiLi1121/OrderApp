@@ -1,5 +1,5 @@
 //
-//  OAProfileViewController.swift
+//  OAShoppingCartViewController.swift
 //  OrderApp
 //
 //  Created by Shawn Xu on 7/24/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class OAProfileViewController: UIViewController {
+class OAShoppingCartViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = UIColor.redColor()
+    self.view.backgroundColor = UIColor.blueColor()
     // Do any additional setup after loading the view.
   }
 }

@@ -15,6 +15,12 @@
 		1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */; };
 		1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */; };
 		1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */; };
+		1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */; };
+		1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E431D456EA800BDAAD9 /* OAOrderNavigationController.swift */; };
+		1F066E471D4572AA00BDAAD9 /* OAShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */; };
+		1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */; };
+		1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E4B1D45779800BDAAD9 /* OAHomeViewController.swift */; };
+		1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E4D1D4577DD00BDAAD9 /* OAHomeNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileViewController.swift; sourceTree = "<group>"; };
 		1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderViewController.swift; sourceTree = "<group>"; };
 		1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAMainTabBarController.swift; sourceTree = "<group>"; };
+		1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileNavigationController.swift; sourceTree = "<group>"; };
+		1F066E431D456EA800BDAAD9 /* OAOrderNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderNavigationController.swift; sourceTree = "<group>"; };
+		1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartViewController.swift; sourceTree = "<group>"; };
+		1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartNavigationController.swift; sourceTree = "<group>"; };
+		1F066E4B1D45779800BDAAD9 /* OAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeViewController.swift; sourceTree = "<group>"; };
+		1F066E4D1D4577DD00BDAAD9 /* OAHomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1F066E4A1D45777900BDAAD9 /* Home */,
+				1F066E451D45726900BDAAD9 /* ShoppingCart */,
 				1F066E3A1D4562AF00BDAAD9 /* Profile */,
 				1F066E391D4562A400BDAAD9 /* Order */,
 				1F066E0B1D45618800BDAAD9 /* AppDelegate.swift */,
@@ -132,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */,
+				1F066E431D456EA800BDAAD9 /* OAOrderNavigationController.swift */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -140,8 +155,27 @@
 			isa = PBXGroup;
 			children = (
 				1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */,
+				1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		1F066E451D45726900BDAAD9 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */,
+				1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */,
+			);
+			name = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		1F066E4A1D45777900BDAAD9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E4B1D45779800BDAAD9 /* OAHomeViewController.swift */,
+				1F066E4D1D4577DD00BDAAD9 /* OAHomeNavigationController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
+				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
+				1F066E471D4572AA00BDAAD9 /* OAShoppingCartViewController.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
+				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
+				1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */,
+				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
