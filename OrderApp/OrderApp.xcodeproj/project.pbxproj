@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E0B1D45618800BDAAD9 /* AppDelegate.swift */; };
-		1F066E0E1D45618800BDAAD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E0D1D45618800BDAAD9 /* ViewController.swift */; };
-		1F066E111D45618800BDAAD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E0F1D45618800BDAAD9 /* Main.storyboard */; };
 		1F066E131D45618800BDAAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E121D45618800BDAAD9 /* Assets.xcassets */; };
 		1F066E161D45618800BDAAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E141D45618800BDAAD9 /* LaunchScreen.storyboard */; };
 		1F066E211D45618800BDAAD9 /* OrderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E201D45618800BDAAD9 /* OrderAppTests.swift */; };
 		1F066E2C1D45618800BDAAD9 /* OrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */; };
+		1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */; };
+		1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */; };
+		1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,6 @@
 /* Begin PBXFileReference section */
 		1F066E081D45618800BDAAD9 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F066E0B1D45618800BDAAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F066E0D1D45618800BDAAD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1F066E101D45618800BDAAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F066E121D45618800BDAAD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F066E151D45618800BDAAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F066E171D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,9 @@
 		1F066E271D45618800BDAAD9 /* OrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITests.swift; sourceTree = "<group>"; };
 		1F066E2D1D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileViewController.swift; sourceTree = "<group>"; };
+		1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderViewController.swift; sourceTree = "<group>"; };
+		1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAMainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,13 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1F066E3A1D4562AF00BDAAD9 /* Profile */,
+				1F066E391D4562A400BDAAD9 /* Order */,
 				1F066E0B1D45618800BDAAD9 /* AppDelegate.swift */,
-				1F066E0D1D45618800BDAAD9 /* ViewController.swift */,
-				1F066E0F1D45618800BDAAD9 /* Main.storyboard */,
 				1F066E121D45618800BDAAD9 /* Assets.xcassets */,
 				1F066E141D45618800BDAAD9 /* LaunchScreen.storyboard */,
 				1F066E171D45618800BDAAD9 /* Info.plist */,
+				1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */,
 			);
 			path = OrderApp;
 			sourceTree = "<group>";
@@ -123,6 +126,22 @@
 				1F066E2D1D45618800BDAAD9 /* Info.plist */,
 			);
 			path = OrderAppUITests;
+			sourceTree = "<group>";
+		};
+		1F066E391D4562A400BDAAD9 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		1F066E3A1D4562AF00BDAAD9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +250,6 @@
 			files = (
 				1F066E161D45618800BDAAD9 /* LaunchScreen.storyboard in Resources */,
 				1F066E131D45618800BDAAD9 /* Assets.xcassets in Resources */,
-				1F066E111D45618800BDAAD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F066E0E1D45618800BDAAD9 /* ViewController.swift in Sources */,
+				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
+				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
+				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1F066E0F1D45618800BDAAD9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F066E101D45618800BDAAD9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1F066E141D45618800BDAAD9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,6 +494,7 @@
 				1F066E321D45618800BDAAD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F066E331D45618800BDAAD9 /* Build configuration list for PBXNativeTarget "OrderAppTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				1F066E351D45618800BDAAD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F066E361D45618800BDAAD9 /* Build configuration list for PBXNativeTarget "OrderAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +512,7 @@
 				1F066E381D45618800BDAAD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
