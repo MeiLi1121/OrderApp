@@ -14,5 +14,6 @@ class OAHomeViewController: UIViewController {
     super.viewDidLoad()
     
     self.view.backgroundColor = UIColor.purpleColor()
-    // Do any additional setup after loading the view.
-  }}
+    self.title = "Home"
+  }
+}

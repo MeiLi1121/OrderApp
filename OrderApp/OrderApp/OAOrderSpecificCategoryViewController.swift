@@ -1,5 +1,5 @@
 //
-//  OAOrderViewController.swift
+//  OAOrderSpecificCategoryViewController.swift
 //  OrderApp
 //
 //  Created by Shawn Xu on 7/24/16.
@@ -8,29 +8,34 @@
 
 import UIKit
 
-class OAOrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
+class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   //MARK:Properties
   
-  var menuCategoryView:OAOrderMenuCategoryView?
-  let cellIdentifier = "MenuCategoryTableViewCell"
+  var specificCategoryView:OAOrderSpecificCategoryView?
+  var categoryType:String?
+  let cellIdentifier = "SpecificCategoryTableViewCell"
   
-  let categories = [ "Appetizers", "Soup and Noodle", "Entree", "Rice and Noodle", "House Special", "Set Meals", "Vegetable" ]
-  let numberForCategories = [ "12", "10", "123", "15", "18", "2", "5" ]
+  let dishes = [ "A1. Egg Roll (4 Pcs)", "A2. Fried Wonton (10 Pcs)", "A3. Paper Wrapped Chicken (6 Pcs)", "A4. Fried Shrimp (6 Pcs)", "A5. Potstickers (10 Pcs)" ]
+  let prices = [ "$5.45", "$4.45", "$5.95", "$6.45", "$7.95" ]
   
   //MARK: Life Cycle
+  convenience init(categoryType: String) {
+    self.init()
+    self.categoryType = categoryType
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.menuCategoryView = OAOrderMenuCategoryView(dataSource: self, delegate: self)
-    self.view = menuCategoryView
+    
+    self.specificCategoryView = OAOrderSpecificCategoryView(dataSource: self, delegate: self)
+    self.view = specificCategoryView
     
     // remove "back" text from back button
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
                                                             style: .Plain,
                                                             target: nil,
                                                             action: nil)
-    self.title = "Order"
+    self.title = self.categoryType
   }
   
   // UITableViewDataSource
@@ -40,7 +45,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.categories.count;
+    return self.dishes.count;
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,8 +55,8 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
     if (cell == nil) {
       cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellIdentifier)
     }
-    cell!.textLabel!.text = self.categories[indexPath.row]
-    cell!.detailTextLabel!.text = self.numberForCategories[indexPath.row]
+    cell!.textLabel!.text = self.dishes[indexPath.row]
+    cell!.detailTextLabel!.text = self.prices[indexPath.row]
     cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     return cell!
   }
@@ -63,8 +68,6 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.navigationController!.pushViewController(OAOrderSpecificCategoryViewController(categoryType:self.categories[indexPath.row]),
-                                                  animated: true);
     tableView.deselectRowAtIndexPath(indexPath, animated: true);
   }
 }

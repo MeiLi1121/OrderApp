@@ -21,4 +21,5 @@ class OAHomeNavigationController: UINavigationController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  }}
+  }
+}
