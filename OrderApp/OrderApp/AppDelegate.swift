@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
     window?.makeKeyAndVisible()
     window?.rootViewController = tabBarController
+    
+    FIRApp.configure()
     return true
   }
 

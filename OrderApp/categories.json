@@ -1,0 +1,22 @@
+{
+  "categories" : {
+    "Appetizers" : {
+      "name" : "Appetizers"
+    },
+    "SoupAndNoodle" : {
+      "name" : "Soup and Noodle"
+    },
+    "Entree" : {
+      "name" : "Entree"
+    },
+    "RiceAndNoodle" : {
+      "name" : "Rice and Noodle"
+    },
+    "HouseSpecial" : {
+      "name" : "House Special"
+    },
+    "SetMeals" : {
+      "name" : "SetMeals"
+    }
+  }
+}
