@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = tabBarController
     
     FIRApp.configure()
+    FIRDatabase.database().persistenceEnabled = true
     return true
   }
 

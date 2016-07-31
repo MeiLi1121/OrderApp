@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Firebase
+
 class OAOrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   //MARK:Properties
@@ -15,8 +17,14 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   var menuCategoryView:OAOrderMenuCategoryView?
   let cellIdentifier = "MenuCategoryTableViewCell"
   
-  let categories = [ "Appetizers", "Soup and Noodle", "Entree", "Rice and Noodle", "House Special", "Set Meals", "Vegetable" ]
-  let numberForCategories = [ "12", "10", "123", "15", "18", "2", "5" ]
+  // TODO: define keys from server
+  let categoryDBName = "categories"
+  let nameKey = "name"
+  let quantityKey = "quantity"
+  
+  private var _ref: FIRDatabaseReference!
+  private var _refHandle: FIRDatabaseHandle!
+  private var _categories: [FIRDataSnapshot]! = []
   
   //MARK: Life Cycle
   
@@ -31,6 +39,13 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
                                                             target: nil,
                                                             action: nil)
     self.title = "Order"
+    
+    // set up firebase database. might need to be moved to an earlier stage
+    self.configureDatabase()
+  }
+  
+  deinit {
+    _ref.child(categoryDBName).removeObserverWithHandle(_refHandle)
   }
   
   // UITableViewDataSource
@@ -40,18 +55,23 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.categories.count;
+    return _categories.count;
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     // Table view cells are reused and should be dequeued using a cell identifier.
-    
+    // Dequeue cell
     var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
     if (cell == nil) {
       cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellIdentifier)
     }
-    cell!.textLabel!.text = self.categories[indexPath.row]
-    cell!.detailTextLabel!.text = self.numberForCategories[indexPath.row]
+    // Unpack message from Firebase DataSnapshot
+    let categorySnapshot: FIRDataSnapshot! = _categories[indexPath.row]
+    let category = categorySnapshot.value as! Dictionary<String, String>
+    let name = category[nameKey] as String!
+    let quantity = category[quantityKey] as String!
+    cell!.textLabel?.text = name
+    cell!.detailTextLabel?.text = quantity
     cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     return cell!
   }
@@ -63,8 +83,21 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.navigationController!.pushViewController(OAOrderSpecificCategoryViewController(categoryType:self.categories[indexPath.row]),
+    let categorySnapshot: FIRDataSnapshot! = _categories[indexPath.row]
+    let category = categorySnapshot.value as! Dictionary<String, String>
+    let name = category[nameKey] as String!
+    self.navigationController!.pushViewController(OAOrderSpecificCategoryViewController(categoryType:name),
                                                   animated: true);
     tableView.deselectRowAtIndexPath(indexPath, animated: true);
+  }
+  
+  // Firebase
+  func configureDatabase() {
+    _ref = FIRDatabase.database().reference()
+    // Listen for new messages in the Firebase database
+    _refHandle = _ref.child(categoryDBName).observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
+      self._categories.append(snapshot)
+      self.menuCategoryView?.categoryTableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: self._categories.count-1, inSection: 0)], withRowAnimation: .Automatic)
+    })
   }
 }
