@@ -17,6 +17,8 @@ class OAProfileNavigationController: UINavigationController {
                               tag: 4)
     let profileVC = OAProfileViewController()
     self.setViewControllers([ profileVC ], animated: false)
+    self.navigationBar.barTintColor = OANavigationBarTintColor
+    self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:OANavigationBarTextColor];
   }
   
   override func viewDidLoad() {

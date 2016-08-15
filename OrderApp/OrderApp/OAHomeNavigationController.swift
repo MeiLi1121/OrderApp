@@ -17,6 +17,8 @@ class OAHomeNavigationController: UINavigationController {
                               tag: 1)
     let homeVC = OAHomeViewController()
     self.setViewControllers([ homeVC ], animated: false)
+    self.navigationBar.barTintColor = OANavigationBarTintColor
+    self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:OANavigationBarTextColor];
   }
   
   override func viewDidLoad() {

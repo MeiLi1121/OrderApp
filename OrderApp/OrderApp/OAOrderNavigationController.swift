@@ -17,6 +17,8 @@ class OAOrderNavigationController: UINavigationController {
                               tag: 2)
     let orderVC = OAOrderViewController()
     self.setViewControllers([ orderVC ], animated: false)
+    self.navigationBar.barTintColor = OANavigationBarTintColor
+    self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:OANavigationBarTextColor];
   }
   
   override func viewDidLoad() {

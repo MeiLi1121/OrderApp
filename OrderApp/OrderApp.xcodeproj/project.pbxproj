@@ -24,6 +24,7 @@
 		1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */; };
 		1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */; };
 		1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */; };
+		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F987FAB1D4D44BD00BD3F54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMenuCategoryView.swift; sourceTree = "<group>"; };
 		1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryViewController.swift; sourceTree = "<group>"; };
 		1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryView.swift; sourceTree = "<group>"; };
+		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2089C087F06B39F902EF1A52 /* Pods-OrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		43E9D043668AA494A897E8A6 /* Pods-OrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1F89FB111D616FCF002F50BD /* Utils */,
 				1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */,
 				1F066E4A1D45777900BDAAD9 /* Home */,
 				1F066E451D45726900BDAAD9 /* ShoppingCart */,
@@ -208,6 +211,14 @@
 				1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1F89FB111D616FCF002F50BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1F89FB121D616FF4002F50BD /* OAViewConstants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		536F95BB0B0B1C30C2852E56 /* Pods */ = {
@@ -410,6 +421,7 @@
 			files = (
 				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
+				1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
