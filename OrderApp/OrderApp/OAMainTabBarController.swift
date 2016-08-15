@@ -18,6 +18,7 @@ class OAMainTabBarController: UITabBarController {
     let orderNavVC = OAOrderNavigationController()
     let shoppingCartNavVC = OAShoppingCartNavigationController()
     self.viewControllers = [ homeNavVC, orderNavVC, shoppingCartNavVC, profileNavVC ]
-    self.tabBar.tintColor = UIColor.purpleColor()
+    self.tabBar.tintColor = OATabBarBarTintColor
+    self.tabBar.barTintColor =  OATabBarTintColor
   }
 }
