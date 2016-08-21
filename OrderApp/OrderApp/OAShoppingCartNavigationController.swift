@@ -18,6 +18,7 @@ class OAShoppingCartNavigationController: UINavigationController {
     let shoppingCartVC = OAShoppingCartViewController()
     self.setViewControllers([ shoppingCartVC ], animated: false)
     self.navigationBar.barTintColor = OANavigationBarTintColor
+    self.navigationBar.tintColor = OANavigationTintColor
     self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:OANavigationBarTextColor];
   }
   

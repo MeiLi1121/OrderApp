@@ -9,11 +9,25 @@
 import UIKit
 
 class OAHomeViewController: UIViewController {
+  
+  //MARK:Properties
+  
+  var homeView:OAHomeView?
+  
+  override func loadView() {
+    self.homeView = OAHomeView(frame: CGRectZero)
+    self.view = self.homeView
+    self.view.setNeedsLayout()
+    self.view.layoutIfNeeded()
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    self.view.backgroundColor = UIColor.purpleColor()
+    // remove "back" text from back button
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                            style: .Plain,
+                                                            target: nil,
+                                                            action: nil)
     self.title = "Home"
   }
 }

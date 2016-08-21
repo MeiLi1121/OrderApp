@@ -31,7 +31,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   override func viewDidLoad() {
     super.viewDidLoad()
     self.menuCategoryView = OAOrderMenuCategoryView(dataSource: self, delegate: self)
-    self.view = menuCategoryView
+    self.view = self.menuCategoryView
     
     // remove "back" text from back button
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
@@ -48,7 +48,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
     _ref.child(categoryDBName).removeObserverWithHandle(_refHandle)
   }
   
-  // UITableViewDataSource
+  //MARK: UITableViewDataSource
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1;
@@ -76,7 +76,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
     return cell!
   }
   
-  // UITableViewDelegate
+  //MARK: UITableViewDelegate
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return 44.0;
@@ -91,7 +91,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
     tableView.deselectRowAtIndexPath(indexPath, animated: true);
   }
   
-  // Firebase
+  //MARK: Firebase
   func configureDatabase() {
     _ref = FIRDatabase.database().reference()
     // Listen for new messages in the Firebase database

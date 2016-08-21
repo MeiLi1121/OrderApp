@@ -18,6 +18,7 @@ class OAOrderNavigationController: UINavigationController {
     let orderVC = OAOrderViewController()
     self.setViewControllers([ orderVC ], animated: false)
     self.navigationBar.barTintColor = OANavigationBarTintColor
+    self.navigationBar.tintColor = OANavigationTintColor
     self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:OANavigationBarTextColor];
   }
   
