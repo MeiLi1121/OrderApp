@@ -8,10 +8,10 @@
 
 import UIKit
 
-let OANavigationBarTintColor = UIColor(red: 120.0 / 255, green: 6.0 / 255, blue: 6.0 / 255, alpha: 1)
+let OANavigationBarTintColor = UIColor(red: 104.0 / 255, green: 4.0 / 255, blue: 82.0 / 255, alpha: 1)
 let OANavigationTintColor = UIColor.whiteColor()
 let OANavigationBarTextColor = UIColor.whiteColor()
-let OATabBarBarTintColor = UIColor(red: 120.0 / 255, green: 6.0 / 255, blue: 6.0 / 255, alpha: 1)
+let OATabBarBarTintColor = UIColor(red: 104.0 / 255, green: 4.0 / 255, blue: 82.0 / 255, alpha: 1)
 let OATabBarTintColor = UIColor.whiteColor()
 let OASeparatorColor = UIColor(red: 151.0 / 255, green: 151.0 / 255, blue: 151.0 / 255, alpha: 1)
 
