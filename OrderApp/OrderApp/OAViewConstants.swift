@@ -20,3 +20,5 @@ let OADefaultPadding: CGFloat = 12.0
 let OABoldTextFont: UIFont =  UIFont.systemFontOfSize(16.0, weight: UIFontWeightBold)
 let OAPrimaryTextFont: UIFont =  UIFont.systemFontOfSize(14.0, weight: UIFontWeightRegular)
 let OASecondaryTextFont: UIFont =  UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)
+
+let OADishGalleryCollectionViewCellIdentifier = "DishGalleryCollectionViewCell"

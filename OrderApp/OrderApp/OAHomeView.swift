@@ -37,7 +37,7 @@ class OAMapAnnotation: NSObject, MKAnnotation {
   }
 }
 
-public protocol OAHomeViewDelegate : NSObjectProtocol, MKMapViewDelegate {
+public protocol OAHomeViewDelegate : NSObjectProtocol, MKMapViewDelegate, UICollectionViewDataSource {
   func phoneButtonTapped(sender: UIButton!)
 }
 
@@ -49,6 +49,8 @@ class OAHomeView: UIView {
   
   var descriptionLabel: UILabel!
   
+  var containerScrollView: UIScrollView!
+  
   var hoursView: OAHomeHoursView!
   
   var mapView: MKMapView!
@@ -56,11 +58,17 @@ class OAHomeView: UIView {
   
   var descriptionSeparator: UIView!
   var hoursSeparator: UIView!
+  var dishGalleryCollectionView: UICollectionView!
+  var dishGalleryCollectionViewSeparator: UIView!
   
   //MARK: Life Cycle
   convenience init(delegate: OAHomeViewDelegate) {
     self.init(frame: CGRectZero)
     self.backgroundColor = UIColor.whiteColor()
+    
+    // configure scroll view
+    containerScrollView = UIScrollView()
+    self.addSubview(containerScrollView)
     
     //configure map view
     self.mapView = MKMapView()
@@ -69,7 +77,7 @@ class OAHomeView: UIView {
     self.mapView.addAnnotation(self.mapNotation)
     self.mapView.delegate = delegate
     self.mapView.selectAnnotation(self.mapNotation, animated: false)
-    self.addSubview(self.mapView)
+    self.containerScrollView.addSubview(self.mapView)
     
     //configure text view
     self.descriptionLabel = UILabel()
@@ -81,19 +89,36 @@ class OAHomeView: UIView {
     descriptionString.appendAttributedString(NSMutableAttributedString(string:normalText, attributes: textFont))
     self.descriptionLabel.attributedText = descriptionString
     self.descriptionLabel.numberOfLines = 0
-    self.addSubview(self.descriptionLabel)
+    self.containerScrollView.addSubview(self.descriptionLabel)
     
     //configure dine in hours view
     self.hoursView = OAHomeHoursView()
-    self.addSubview(self.hoursView)
+    self.containerScrollView.addSubview(self.hoursView)
     
     //configure separators
     self.descriptionSeparator = UIView()
     self.descriptionSeparator.backgroundColor = OASeparatorColor
-    self.addSubview(self.descriptionSeparator)
+    self.containerScrollView.addSubview(self.descriptionSeparator)
     self.hoursSeparator = UIView()
     self.hoursSeparator.backgroundColor = OASeparatorColor
-    self.addSubview(self.hoursSeparator)
+    self.containerScrollView.addSubview(self.hoursSeparator)
+    self.dishGalleryCollectionViewSeparator = UIView()
+    self.dishGalleryCollectionViewSeparator.backgroundColor = OASeparatorColor
+    self.containerScrollView.addSubview(self.dishGalleryCollectionViewSeparator)
+    
+    // configure dish gallery collection view
+    let flowLayout = UICollectionViewFlowLayout()
+    flowLayout.sectionInset = UIEdgeInsetsZero
+    flowLayout.minimumInteritemSpacing = 1.0 / UIScreen.mainScreen().scale
+    flowLayout.minimumLineSpacing = 1.0 / UIScreen.mainScreen().scale
+    flowLayout.scrollDirection = .Horizontal
+    flowLayout.itemSize = CGSize(width: 112, height: 80)
+    self.dishGalleryCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
+    self.dishGalleryCollectionView.dataSource = delegate
+    self.dishGalleryCollectionView.registerClass(OADishGalleryCollectionViewCell.self, forCellWithReuseIdentifier: OADishGalleryCollectionViewCellIdentifier)
+    self.dishGalleryCollectionView.showsHorizontalScrollIndicator = false
+    self.dishGalleryCollectionView.backgroundColor = UIColor.whiteColor()
+    self.containerScrollView.addSubview(self.dishGalleryCollectionView)
   }
   
   //MARK: Layout Views
@@ -106,7 +131,7 @@ class OAHomeView: UIView {
       CGRectMake(
         OADefaultPadding,
         // have to add 20 for status bar and 44 for navigation bar but don't know why
-        OADefaultPadding + 64,
+        OADefaultPadding,
         descriptionLabelBounds.width,
         descriptionLabelBounds.height))
    
@@ -117,11 +142,25 @@ class OAHomeView: UIView {
         self.bounds.width,
         1.0 / UIScreen.mainScreen().scale))
     
-    let hoursViewBounds = self.hoursView.sizeThatFits(CGSizeMake(self.bounds.width, self.bounds.height - CGRectGetMaxY(self.descriptionLabel.frame) - OADefaultPadding))
+    self.dishGalleryCollectionView.frame = CGRectIntegral(
+      CGRectMake(
+        0.0,
+        CGRectGetMaxY(self.descriptionSeparator.frame),
+        self.bounds.width,
+        80.0))
+    
+    self.dishGalleryCollectionViewSeparator.frame = CGRectIntegral(
+      CGRectMake(
+        0.0,
+        CGRectGetMaxY(self.dishGalleryCollectionView.frame),
+        self.bounds.width,
+        1.0 / UIScreen.mainScreen().scale))
+    
+    let hoursViewBounds = self.hoursView.sizeThatFits(CGSizeMake(self.bounds.width, self.bounds.height - CGRectGetMaxY(self.dishGalleryCollectionView.frame) - OADefaultPadding))
     self.hoursView.frame = CGRectIntegral(
       CGRectMake(
         0.0,
-        CGRectGetMaxY(self.descriptionSeparator.frame) + OADefaultPadding,
+        CGRectGetMaxY(self.dishGalleryCollectionViewSeparator.frame) + OADefaultPadding,
         hoursViewBounds.width,
         hoursViewBounds.height))
     
@@ -137,7 +176,9 @@ class OAHomeView: UIView {
         0.0,
         CGRectGetMaxY(self.hoursSeparator.frame),
         self.bounds.width,
-        self.bounds.height - CGRectGetMaxY(self.hoursView.frame) - OADefaultPadding))
+        max(self.bounds.height - CGRectGetMaxY(self.hoursSeparator.frame), 200)))
+    self.containerScrollView.frame = self.bounds
+    self.containerScrollView.contentSize = CGSizeMake(self.bounds.width, CGRectGetMaxY(self.mapView.frame))
   }
   
   //MARK: Private Helpers

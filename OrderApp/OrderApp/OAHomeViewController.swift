@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import AddressBook
 
-class OAHomeViewController: UIViewController, OAHomeViewDelegate {
+class OAHomeViewController: UIViewController, OAHomeViewDelegate, UICollectionViewDataSource {
   
   //MARK:Properties
   
@@ -69,4 +69,20 @@ class OAHomeViewController: UIViewController, OAHomeViewDelegate {
     self.presentViewController(alert, animated: true, completion: nil)
   }
   
+  //MARK: UICollectionViewDataSource
+
+  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return dishImages().count
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(OADishGalleryCollectionViewCellIdentifier, forIndexPath: indexPath) as! OADishGalleryCollectionViewCell
+    cell.imageView.image = dishImages()[indexPath.row]
+    cell.backgroundColor = UIColor.redColor()
+    return cell
+  }
 }

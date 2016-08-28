@@ -14,6 +14,6 @@ class OAShoppingCartViewController: UIViewController {
     super.viewDidLoad()
     
     self.view.backgroundColor = UIColor.blueColor()
-    self.title = "Shopping Cart"
+    self.title = "Cart"
   }
 }

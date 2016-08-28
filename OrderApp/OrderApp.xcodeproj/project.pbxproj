@@ -24,6 +24,7 @@
 		1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */; };
 		1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */; };
 		1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */; };
+		1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */; };
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
 		1F987FAB1D4D44BD00BD3F54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */; };
@@ -73,6 +74,7 @@
 		1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMenuCategoryView.swift; sourceTree = "<group>"; };
 		1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryViewController.swift; sourceTree = "<group>"; };
 		1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryView.swift; sourceTree = "<group>"; };
+		1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OADishGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -237,6 +239,7 @@
 			children = (
 				1FAE46811D69789E005C26A6 /* OAHomeView.swift */,
 				1FAE46831D6A3A28005C26A6 /* OAHomeHoursView.swift */,
+				1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
 				1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
+				1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1FAE46841D6A3A28005C26A6 /* OAHomeHoursView.swift in Sources */,
 				1FAE46861D6A3B2C005C26A6 /* OAHelpers.swift in Sources */,
