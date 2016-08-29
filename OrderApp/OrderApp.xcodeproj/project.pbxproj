@@ -25,8 +25,12 @@
 		1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */; };
 		1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */; };
 		1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */; };
+		1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */; };
+		1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */; };
+		1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */; };
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
+		1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */; };
 		1F987FAB1D4D44BD00BD3F54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */; };
 		1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46811D69789E005C26A6 /* OAHomeView.swift */; };
 		1FAE46841D6A3A28005C26A6 /* OAHomeHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46831D6A3A28005C26A6 /* OAHomeHoursView.swift */; };
@@ -75,8 +79,12 @@
 		1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryViewController.swift; sourceTree = "<group>"; };
 		1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryView.swift; sourceTree = "<group>"; };
 		1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OADishGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemViewController.swift; sourceTree = "<group>"; };
+		1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemView.swift; sourceTree = "<group>"; };
+		1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OARadioButtonTextLabelView.swift; sourceTree = "<group>"; };
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStepperView.swift; sourceTree = "<group>"; };
 		1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1FAE46811D69789E005C26A6 /* OAHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeView.swift; sourceTree = "<group>"; };
 		1FAE46831D6A3A28005C26A6 /* OAHomeHoursView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeHoursView.swift; sourceTree = "<group>"; };
@@ -212,6 +220,7 @@
 			children = (
 				1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */,
 				1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */,
+				1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +230,8 @@
 			children = (
 				1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */,
 				1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */,
+				1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */,
+				1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 			children = (
 				1F89FB121D616FF4002F50BD /* OAViewConstants.swift */,
 				1FAE46851D6A3B2C005C26A6 /* OAHelpers.swift */,
+				1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -459,7 +471,9 @@
 			files = (
 				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
+				1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */,
 				1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */,
+				1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
 				1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
@@ -470,10 +484,12 @@
 				1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */,
 				1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */,
 				1F066E471D4572AA00BDAAD9 /* OAShoppingCartViewController.swift in Sources */,
+				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
 				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
 				1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */,
 				1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */,
+				1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */,
 				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,8 +15,20 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   var categoryType:String?
   let cellIdentifier = "SpecificCategoryTableViewCell"
   
-  let dishes = [ "A1. Egg Roll (4 Pcs)", "A2. Fried Wonton (10 Pcs)", "A3. Paper Wrapped Chicken (6 Pcs)", "A4. Fried Shrimp (6 Pcs)", "A5. Potstickers (10 Pcs)" ]
-  let prices = [ "$5.45", "$4.45", "$5.95", "$6.45", "$7.95" ]
+  let dishes = [
+    "Egg Roll (4 Pcs)",
+    "Fried Wonton (10 Pcs)",
+    "Paper Wrapped Chicken (6 Pcs)",
+    "Fried Shrimp (6 Pcs)",
+    "Potstickers (10 Pcs)"
+  ]
+  let prices = [
+    "$5.45",
+    "$4.45",
+    "$5.95",
+    "$6.45",
+    "$7.95"
+  ]
   
   //MARK: Life Cycle
   convenience init(categoryType: String) {
@@ -68,6 +80,8 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: self.dishes[indexPath.row]),
+                                                  animated: true);
     tableView.deselectRowAtIndexPath(indexPath, animated: true);
   }
 }
