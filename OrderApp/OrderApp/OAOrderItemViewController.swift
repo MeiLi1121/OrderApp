@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OAOrderItemViewController: UIViewController {
+class OAOrderItemViewController: UIViewController, OAOrderItemViewDelegate {
   
   var itemName: String!
   
@@ -23,7 +23,7 @@ class OAOrderItemViewController: UIViewController {
   //MARK: View Controller
   
   override func loadView() {
-    orderItemView = OAOrderItemView(itemName: itemName)
+    orderItemView = OAOrderItemView(itemName: itemName, delegate: self)
     self.view = self.orderItemView
   }
   
@@ -31,6 +31,18 @@ class OAOrderItemViewController: UIViewController {
     super.viewDidLoad()
     self.title = "Order"
     self.view.backgroundColor = UIColor.whiteColor()
+    // remove "back" text from back button
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                            style: .Plain,
+                                                            target: nil,
+                                                            action: nil)
+  }
+  
+  //MARK: OAOrderItemViewDelegate
+  
+  func addToCartButtonTapped(sender: UIButton!) {
+    self.navigationController!.pushViewController(OAOrderMoreOrCheckoutViewController(),
+                                                  animated: true);
   }
 
 }

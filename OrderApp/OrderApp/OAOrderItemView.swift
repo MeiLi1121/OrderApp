@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol OAOrderItemViewDelegate : NSObjectProtocol {
+  func addToCartButtonTapped(sender: UIButton!)
+}
+
 class OAOrderItemView: UIView {
   
   var containerScrollView: UIScrollView!
@@ -23,10 +27,14 @@ class OAOrderItemView: UIView {
   var addItemButton: UIButton!
   
   var priceLabel: UILabel!
+
+  weak var delegate: OAOrderItemViewDelegate!
   
   //MARK: Life Cycle
-  convenience init(itemName: String) {
+  convenience init(itemName: String, delegate: OAOrderItemViewDelegate) {
     self.init(frame: CGRectZero)
+    
+    self.delegate = delegate
     
     // configure scroll view
     containerScrollView = UIScrollView()
@@ -62,6 +70,7 @@ class OAOrderItemView: UIView {
     addItemButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     addItemButton.backgroundColor = OATabBarBarTintColor
     addItemButton.layer.cornerRadius = 4.0
+    addItemButton.addTarget(self, action: #selector(self.buttonTapped), forControlEvents: .TouchUpInside)
     containerScrollView.addSubview(addItemButton)
     
     //configure price label
@@ -138,6 +147,10 @@ class OAOrderItemView: UIView {
     
     self.containerScrollView.frame = self.bounds
   }
+  
+  //MARK: Button Action
+  func buttonTapped(sender: UIButton!) {
+    delegate.addToCartButtonTapped(sender)
+  }
 
 }
-
