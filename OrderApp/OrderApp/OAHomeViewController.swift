@@ -29,7 +29,7 @@ class OAHomeViewController: UIViewController, OAHomeViewDelegate, UICollectionVi
     super.viewDidLoad()
     // remove "back" text from back button
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
-                                                            style: .Plain,
+                                                            style: .plain,
                                                             target: nil,
                                                             action: nil)
     self.title = "Home"
@@ -37,11 +37,11 @@ class OAHomeViewController: UIViewController, OAHomeViewDelegate, UICollectionVi
   
   //MARK: MKMapViewDelegate
   
-  func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
     if let annotation = annotation as? OAMapAnnotation {
       let identifier = "pin"
       var view: MKPinAnnotationView
-      if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         as? MKPinAnnotationView { // 2
         dequeuedView.annotation = annotation
         view = dequeuedView
@@ -49,40 +49,40 @@ class OAHomeViewController: UIViewController, OAHomeViewDelegate, UICollectionVi
         // 3
         view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         view.canShowCallout = true
-        view.rightCalloutAccessoryView = UIButton(type:.DetailDisclosure) as UIView
+        view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
       }
       return view
     }
     return nil
   }
   
-  func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                calloutAccessoryControlTapped control: UIControl) {
     let location = view.annotation as! OAMapAnnotation
     let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-    location.mapItem().openInMapsWithLaunchOptions(launchOptions)
+    location.mapItem().openInMaps(launchOptions: launchOptions)
   }
   
-  func phoneButtonTapped(sender: UIButton!) {
-    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
-    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-    self.presentViewController(alert, animated: true, completion: nil)
+  func phoneButtonTapped(_ sender: UIButton!) {
+    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
   
   //MARK: UICollectionViewDataSource
 
-  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return dishImages().count
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(OADishGalleryCollectionViewCellIdentifier, forIndexPath: indexPath) as! OADishGalleryCollectionViewCell
-    cell.imageView.image = dishImages()[indexPath.row]
-    cell.backgroundColor = UIColor.redColor()
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OADishGalleryCollectionViewCellIdentifier, for: indexPath) as! OADishGalleryCollectionViewCell
+    cell.imageView.image = dishImages()[(indexPath as NSIndexPath).row]
+    cell.backgroundColor = UIColor.red
     return cell
   }
 }

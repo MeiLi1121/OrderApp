@@ -38,7 +38,7 @@ class OAMapAnnotation: NSObject, MKAnnotation {
 }
 
 public protocol OAHomeViewDelegate : NSObjectProtocol, MKMapViewDelegate, UICollectionViewDataSource {
-  func phoneButtonTapped(sender: UIButton!)
+  func phoneButtonTapped(_ sender: UIButton!)
 }
 
 class OAHomeView: UIView {
@@ -63,8 +63,8 @@ class OAHomeView: UIView {
   
   //MARK: Life Cycle
   convenience init(delegate: OAHomeViewDelegate) {
-    self.init(frame: CGRectZero)
-    self.backgroundColor = UIColor.whiteColor()
+    self.init(frame: CGRect.zero)
+    self.backgroundColor = UIColor.white
     
     // configure scroll view
     containerScrollView = UIScrollView()
@@ -86,7 +86,7 @@ class OAHomeView: UIView {
     let boldFont = [NSFontAttributeName : OABoldTextFont]
     let descriptionString = NSMutableAttributedString(string:nameText, attributes:boldFont)
     let textFont = [NSFontAttributeName : OAPrimaryTextFont]
-    descriptionString.appendAttributedString(NSMutableAttributedString(string:normalText, attributes: textFont))
+    descriptionString.append(NSMutableAttributedString(string:normalText, attributes: textFont))
     self.descriptionLabel.attributedText = descriptionString
     self.descriptionLabel.numberOfLines = 0
     self.containerScrollView.addSubview(self.descriptionLabel)
@@ -108,16 +108,16 @@ class OAHomeView: UIView {
     
     // configure dish gallery collection view
     let flowLayout = UICollectionViewFlowLayout()
-    flowLayout.sectionInset = UIEdgeInsetsZero
-    flowLayout.minimumInteritemSpacing = 1.0 / UIScreen.mainScreen().scale
-    flowLayout.minimumLineSpacing = 1.0 / UIScreen.mainScreen().scale
-    flowLayout.scrollDirection = .Horizontal
+    flowLayout.sectionInset = UIEdgeInsets.zero
+    flowLayout.minimumInteritemSpacing = 1.0 / UIScreen.main.scale
+    flowLayout.minimumLineSpacing = 1.0 / UIScreen.main.scale
+    flowLayout.scrollDirection = .horizontal
     flowLayout.itemSize = CGSize(width: 112, height: 80)
-    self.dishGalleryCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
+    self.dishGalleryCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
     self.dishGalleryCollectionView.dataSource = delegate
-    self.dishGalleryCollectionView.registerClass(OADishGalleryCollectionViewCell.self, forCellWithReuseIdentifier: OADishGalleryCollectionViewCellIdentifier)
+    self.dishGalleryCollectionView.register(OADishGalleryCollectionViewCell.self, forCellWithReuseIdentifier: OADishGalleryCollectionViewCellIdentifier)
     self.dishGalleryCollectionView.showsHorizontalScrollIndicator = false
-    self.dishGalleryCollectionView.backgroundColor = UIColor.whiteColor()
+    self.dishGalleryCollectionView.backgroundColor = UIColor.white
     self.containerScrollView.addSubview(self.dishGalleryCollectionView)
   }
   
@@ -126,63 +126,56 @@ class OAHomeView: UIView {
   override func layoutSubviews() {
     let constrainedWidth = self.bounds.size.width - 2 * OADefaultPadding
     let constrainedHeight = self.bounds.size.height
-    let descriptionLabelBounds = self.descriptionLabel.sizeThatFits(CGSizeMake(constrainedWidth, constrainedHeight))
-    self.descriptionLabel.frame = CGRectIntegral(
-      CGRectMake(
-        OADefaultPadding,
+    let descriptionLabelBounds = self.descriptionLabel.sizeThatFits(CGSize(width: constrainedWidth, height: constrainedHeight))
+    self.descriptionLabel.frame = CGRect(
+        x: OADefaultPadding,
         // have to add 20 for status bar and 44 for navigation bar but don't know why
-        OADefaultPadding,
-        descriptionLabelBounds.width,
-        descriptionLabelBounds.height))
+        y: OADefaultPadding,
+        width: descriptionLabelBounds.width,
+        height: descriptionLabelBounds.height).integral
    
-    self.descriptionSeparator.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.descriptionLabel.frame) + OADefaultPadding,
-        self.bounds.width,
-        1.0 / UIScreen.mainScreen().scale))
+    self.descriptionSeparator.frame = CGRect(
+        x: 0.0,
+        y: self.descriptionLabel.frame.maxY + OADefaultPadding,
+        width: self.bounds.width,
+        height: 1.0 / UIScreen.main.scale).integral
     
-    self.dishGalleryCollectionView.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.descriptionSeparator.frame),
-        self.bounds.width,
-        80.0))
+    self.dishGalleryCollectionView.frame = CGRect(
+        x: 0.0,
+        y: self.descriptionSeparator.frame.maxY,
+        width: self.bounds.width,
+        height: 80.0).integral
     
-    self.dishGalleryCollectionViewSeparator.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.dishGalleryCollectionView.frame),
-        self.bounds.width,
-        1.0 / UIScreen.mainScreen().scale))
+    self.dishGalleryCollectionViewSeparator.frame = CGRect(
+        x: 0.0,
+        y: self.dishGalleryCollectionView.frame.maxY,
+        width: self.bounds.width,
+        height: 1.0 / UIScreen.main.scale).integral
     
-    let hoursViewBounds = self.hoursView.sizeThatFits(CGSizeMake(self.bounds.width, self.bounds.height - CGRectGetMaxY(self.dishGalleryCollectionView.frame) - OADefaultPadding))
-    self.hoursView.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.dishGalleryCollectionViewSeparator.frame) + OADefaultPadding,
-        hoursViewBounds.width,
-        hoursViewBounds.height))
+    let hoursViewBounds = self.hoursView.sizeThatFits(CGSize(width: self.bounds.width, height: self.bounds.height - self.dishGalleryCollectionView.frame.maxY - OADefaultPadding))
+    self.hoursView.frame = CGRect(
+        x: 0.0,
+        y: self.dishGalleryCollectionViewSeparator.frame.maxY + OADefaultPadding,
+        width: hoursViewBounds.width,
+        height: hoursViewBounds.height).integral
     
-    self.hoursSeparator.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.hoursView.frame) + OADefaultPadding,
-        self.bounds.width,
-        1.0 / UIScreen.mainScreen().scale))
+    self.hoursSeparator.frame = CGRect(
+        x: 0.0,
+        y: self.hoursView.frame.maxY + OADefaultPadding,
+        width: self.bounds.width,
+        height: 1.0 / UIScreen.main.scale).integral
     
-    self.mapView.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(self.hoursSeparator.frame),
-        self.bounds.width,
-        max(self.bounds.height - CGRectGetMaxY(self.hoursSeparator.frame), 200)))
+    self.mapView.frame = CGRect(
+        x: 0.0,
+        y: self.hoursSeparator.frame.maxY,
+        width: self.bounds.width,
+        height: max(self.bounds.height - self.hoursSeparator.frame.maxY, 200)).integral
     self.containerScrollView.frame = self.bounds
-    self.containerScrollView.contentSize = CGSizeMake(self.bounds.width, CGRectGetMaxY(self.mapView.frame))
+    self.containerScrollView.contentSize = CGSize(width: self.bounds.width, height: self.mapView.frame.maxY)
   }
   
   //MARK: Private Helpers
-  func _centerMapOnLocation(location: CLLocation) {
+  func _centerMapOnLocation(_ location: CLLocation) {
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                               regionRadius * 2.0,
                                                               regionRadius * 2.0)

@@ -44,7 +44,7 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
     
     // remove "back" text from back button
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
-                                                            style: .Plain,
+                                                            style: .plain,
                                                             target: nil,
                                                             action: nil)
     self.title = self.categoryType
@@ -52,36 +52,36 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   
   // UITableViewDataSource
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return 1;
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.dishes.count;
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // Table view cells are reused and should be dequeued using a cell identifier.
     
-    var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+    var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
     if (cell == nil) {
-      cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellIdentifier)
+      cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
     }
-    cell!.textLabel!.text = self.dishes[indexPath.row]
-    cell!.detailTextLabel!.text = self.prices[indexPath.row]
-    cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+    cell!.textLabel!.text = self.dishes[(indexPath as NSIndexPath).row]
+    cell!.detailTextLabel!.text = self.prices[(indexPath as NSIndexPath).row]
+    cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     return cell!
   }
   
   // UITableViewDelegate
   
-  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 44.0;
   }
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: self.dishes[indexPath.row]),
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: self.dishes[(indexPath as NSIndexPath).row]),
                                                   animated: true);
-    tableView.deselectRowAtIndexPath(indexPath, animated: true);
+    tableView.deselectRow(at: indexPath, animated: true);
   }
 }

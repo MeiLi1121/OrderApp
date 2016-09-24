@@ -17,7 +17,7 @@ class OAOrderSpecificCategoryView: UIView {
   //MARK: Life Cycle
   
   convenience init(dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     self.dishTableView = UITableView();
     self.dishTableView?.dataSource = dataSource
     self.dishTableView?.delegate = delegate
@@ -25,7 +25,7 @@ class OAOrderSpecificCategoryView: UIView {
     self.dishTableView?.tableFooterView = UIView(frame: CGRect.zero)
     self.addSubview(self.dishTableView!)
     
-    self.backgroundColor = UIColor.whiteColor()
+    self.backgroundColor = UIColor.white
   }
   
   //MARK: Layout

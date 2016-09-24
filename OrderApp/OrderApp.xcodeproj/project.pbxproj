@@ -10,7 +10,6 @@
 		1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E0B1D45618800BDAAD9 /* AppDelegate.swift */; };
 		1F066E131D45618800BDAAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E121D45618800BDAAD9 /* Assets.xcassets */; };
 		1F066E161D45618800BDAAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E141D45618800BDAAD9 /* LaunchScreen.storyboard */; };
-		1F066E211D45618800BDAAD9 /* OrderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E201D45618800BDAAD9 /* OrderAppTests.swift */; };
 		1F066E2C1D45618800BDAAD9 /* OrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */; };
 		1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */; };
 		1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */; };
@@ -28,6 +27,7 @@
 		1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */; };
 		1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */; };
 		1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */; };
+		1F2496321D93931C00A9EB58 /* OAShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */; };
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
 		1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */; };
@@ -63,8 +63,6 @@
 		1F066E151D45618800BDAAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F066E171D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F066E1C1D45618800BDAAD9 /* OrderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F066E201D45618800BDAAD9 /* OrderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppTests.swift; sourceTree = "<group>"; };
-		1F066E221D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F066E271D45618800BDAAD9 /* OrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITests.swift; sourceTree = "<group>"; };
 		1F066E2D1D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +82,7 @@
 		1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemViewController.swift; sourceTree = "<group>"; };
 		1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemView.swift; sourceTree = "<group>"; };
 		1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OARadioButtonTextLabelView.swift; sourceTree = "<group>"; };
+		1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartView.swift; sourceTree = "<group>"; };
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStepperView.swift; sourceTree = "<group>"; };
@@ -127,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				1F066E0A1D45618800BDAAD9 /* OrderApp */,
-				1F066E1F1D45618800BDAAD9 /* OrderAppTests */,
 				1F066E2A1D45618800BDAAD9 /* OrderAppUITests */,
 				1F066E091D45618800BDAAD9 /* Products */,
 				536F95BB0B0B1C30C2852E56 /* Pods */,
@@ -163,15 +161,6 @@
 			path = OrderApp;
 			sourceTree = "<group>";
 		};
-		1F066E1F1D45618800BDAAD9 /* OrderAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				1F066E201D45618800BDAAD9 /* OrderAppTests.swift */,
-				1F066E221D45618800BDAAD9 /* Info.plist */,
-			);
-			path = OrderAppTests;
-			sourceTree = "<group>";
-		};
 		1F066E2A1D45618800BDAAD9 /* OrderAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +192,8 @@
 		1F066E451D45726900BDAAD9 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */,
-				1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */,
+				1F2496301D9391F300A9EB58 /* ViewControllers */,
+				1F24962F1D9391ED00A9EB58 /* Views */,
 			);
 			name = ShoppingCart;
 			sourceTree = "<group>";
@@ -240,6 +229,23 @@
 				1F9303181D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1F24962F1D9391ED00A9EB58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1F2496301D9391F300A9EB58 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */,
+				1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1F89FB111D616FCF002F50BD /* Utils */ = {
@@ -353,12 +359,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Shawn Xu";
 				TargetAttributes = {
 					1F066E071D45618800BDAAD9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4HSPGN45JG;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -367,10 +374,12 @@
 					};
 					1F066E1B1D45618800BDAAD9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1F066E071D45618800BDAAD9;
 					};
 					1F066E261D45618800BDAAD9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1F066E071D45618800BDAAD9;
 					};
 				};
@@ -475,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2496321D93931C00A9EB58 /* OAShoppingCartView.swift in Sources */,
 				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
 				1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */,
@@ -506,7 +516,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F066E211D45618800BDAAD9 /* OrderAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +568,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -604,8 +615,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -624,6 +637,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -639,6 +653,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -653,6 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -664,6 +680,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/OrderApp";
 			};
 			name = Debug;
@@ -676,6 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/OrderApp";
 			};
 			name = Release;
@@ -687,6 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = OrderApp;
 			};
 			name = Debug;
@@ -698,6 +717,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleszechuan.OrderAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = OrderApp;
 			};
 			name = Release;

@@ -21,7 +21,7 @@ class OAOrderStepperView: UIView {
   
   //MARK: Life Cycle
   convenience init(text: String) {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     
     // configure sign views
     addSignView = UIImageView(image: UIImage(named:"addSign"))
@@ -34,9 +34,9 @@ class OAOrderStepperView: UIView {
     textLabel = UILabel()
     textLabel.text = text
     textLabel.font = OABoldTextFont
-    textLabel.layer.borderColor = UIColor.grayColor().CGColor
+    textLabel.layer.borderColor = UIColor.gray.cgColor
     textLabel.layer.borderWidth = 1.0
-    textLabel.textAlignment = .Center
+    textLabel.textAlignment = .center
     textLabel.layer.cornerRadius = 4.0
     self.addSubview(textLabel)
   }
@@ -46,31 +46,28 @@ class OAOrderStepperView: UIView {
     let totalWidth = signWidth * 2 + OADefaultPadding * 2 + textLabelWidth
     let xOffset = self.bounds.size.width / 2.0 - totalWidth / 2.0
     
-    minusSignView.frame = CGRectIntegral(
-      CGRectMake(
-        xOffset,
-        self.bounds.size.height / 2.0 - signWidth / 2.0,
-        signWidth,
-        signWidth))
+    minusSignView.frame = CGRect(
+        x: xOffset,
+        y: self.bounds.size.height / 2.0 - signWidth / 2.0,
+        width: signWidth,
+        height: signWidth).integral
     
-    textLabel.frame = CGRectIntegral(
-      CGRectMake(
-        CGRectGetMaxX(minusSignView.frame) + OADefaultPadding,
-        self.bounds.size.height / 2.0 - textLabelHeight / 2.0,
-        textLabelWidth,
-        textLabelHeight))
+    textLabel.frame = CGRect(
+        x: minusSignView.frame.maxX + OADefaultPadding,
+        y: self.bounds.size.height / 2.0 - textLabelHeight / 2.0,
+        width: textLabelWidth,
+        height: textLabelHeight).integral
     
-    addSignView.frame = CGRectIntegral(
-      CGRectMake(
-        CGRectGetMaxX(textLabel.frame) + OADefaultPadding,
-        self.bounds.size.height / 2.0 - signWidth / 2.0,
-        signWidth,
-        signWidth))
+    addSignView.frame = CGRect(
+        x: textLabel.frame.maxX + OADefaultPadding,
+        y: self.bounds.size.height / 2.0 - signWidth / 2.0,
+        width: signWidth,
+        height: signWidth).integral
   }
   
-  override func sizeThatFits(size: CGSize) -> CGSize {
-    return CGSizeMake(signWidth * 2 + OADefaultPadding * 2 + textLabelWidth,
-                      max(signWidth, textLabelHeight))
+  override func sizeThatFits(_ size: CGSize) -> CGSize {
+    return CGSize(width: signWidth * 2 + OADefaultPadding * 2 + textLabelWidth,
+                      height: max(signWidth, textLabelHeight))
   }
   
 }

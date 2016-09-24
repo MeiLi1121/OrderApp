@@ -10,7 +10,7 @@ import UIKit
 
 class OAHomeHoursView: UIView {
   
-  let dateFormatter: NSDateFormatter = NSDateFormatter()
+  let dateFormatter: DateFormatter = DateFormatter()
   
   var dineInTitleLabel: UILabel!
   var dineInWeekdayLabelArray: [UILabel] = []
@@ -18,7 +18,7 @@ class OAHomeHoursView: UIView {
   
   //MARK: Life Cycle
   convenience init() {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     
     // configure dine in title label
     dineInTitleLabel = UILabel()
@@ -48,48 +48,45 @@ class OAHomeHoursView: UIView {
     var currentY: CGFloat = 0.0;
     let constrainedWidth = self.bounds.size.width / 2.0 - 2 * OADefaultPadding
     
-    let dineInTitleLabelBounds = dineInTitleLabel.sizeThatFits(CGSizeMake(constrainedWidth, 16))
+    let dineInTitleLabelBounds = dineInTitleLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     let xOffset = self.bounds.size.width / 2.0 - dineInTitleLabelBounds.width / 2.0
-    dineInTitleLabel.frame = CGRectIntegral(
-      CGRectMake(
-        xOffset,
-        currentY,
-        dineInTitleLabelBounds.width,
-        dineInTitleLabelBounds.height))
-    currentY = CGRectGetMaxY(dineInTitleLabel.frame) + 8.0
+    dineInTitleLabel.frame = CGRect(
+        x: xOffset,
+        y: currentY,
+        width: dineInTitleLabelBounds.width,
+        height: dineInTitleLabelBounds.height).integral
+    currentY = dineInTitleLabel.frame.maxY + 8.0
     
     for i in 0 ..< dineInWeekdayLabelArray.count {
       let dineInWeekdayLabel = dineInWeekdayLabelArray[i]
-      let dineInWeekdayLabelBounds = dineInWeekdayLabel.sizeThatFits(CGSizeMake(constrainedWidth, 14))
-      dineInWeekdayLabel.frame = CGRectIntegral(
-        CGRectMake(
-          xOffset - 40.0,
-          currentY,
-          dineInWeekdayLabelBounds.width,
-          dineInWeekdayLabelBounds.height))
+      let dineInWeekdayLabelBounds = dineInWeekdayLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 14))
+      dineInWeekdayLabel.frame = CGRect(
+          x: xOffset - 40.0,
+          y: currentY,
+          width: dineInWeekdayLabelBounds.width,
+          height: dineInWeekdayLabelBounds.height).integral
       
       let dineInHourLabel = dineInHourLabelArray[i]
-      let dineInHourLabelBounds = dineInHourLabel.sizeThatFits(CGSizeMake(constrainedWidth, 14))
-      dineInHourLabel.frame = CGRectIntegral(
-        CGRectMake(
-          CGRectGetMinX(dineInWeekdayLabel.frame) + 36.0,
-          currentY,
-          dineInHourLabelBounds.width,
-          dineInHourLabelBounds.height))
-      currentY = CGRectGetMaxY(dineInWeekdayLabel.frame) + 4.0
+      let dineInHourLabelBounds = dineInHourLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 14))
+      dineInHourLabel.frame = CGRect(
+          x: dineInWeekdayLabel.frame.minX + 36.0,
+          y: currentY,
+          width: dineInHourLabelBounds.width,
+          height: dineInHourLabelBounds.height).integral
+      currentY = dineInWeekdayLabel.frame.maxY + 4.0
     }
   }
   
-  override func sizeThatFits(size: CGSize) -> CGSize {
+  override func sizeThatFits(_ size: CGSize) -> CGSize {
     var height: CGFloat = 0.0;
     let constrainedWidth = self.bounds.size.width - 2 * OADefaultPadding
-    let titleLabelBounds = dineInTitleLabel.sizeThatFits(CGSizeMake(constrainedWidth, 16))
+    let titleLabelBounds = dineInTitleLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     height += titleLabelBounds.height + 8.0
     for label in dineInWeekdayLabelArray {
-      let labelBounds = label.sizeThatFits(CGSizeMake(constrainedWidth, 14))
+      let labelBounds = label.sizeThatFits(CGSize(width: constrainedWidth, height: 14))
       height += labelBounds.height + 4.0
     }
-    return CGSizeMake(size.width, height)    
+    return CGSize(width: size.width, height: height)    
   }
   
 }

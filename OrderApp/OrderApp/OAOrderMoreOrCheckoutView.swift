@@ -9,8 +9,8 @@
 import UIKit
 
 public protocol OAOrderMoreOrCheckoutViewDelegate : NSObjectProtocol {
-  func orderMoreButtonTapped(sender: UIButton!)
-  func checkoutButtonTapped(sender: UIButton!)
+  func orderMoreButtonTapped(_ sender: UIButton!)
+  func checkoutButtonTapped(_ sender: UIButton!)
 }
 
 class OAOrderMoreOrCheckoutView: UIView {
@@ -27,7 +27,7 @@ class OAOrderMoreOrCheckoutView: UIView {
   
   //MARK: Life Cycle
   convenience init(delegate: OAOrderMoreOrCheckoutViewDelegate) {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     
     self.delegate = delegate
     // configure scroll view
@@ -36,46 +36,44 @@ class OAOrderMoreOrCheckoutView: UIView {
     
     // configure button view
     orderMoreButton = UIButton()
-    orderMoreButton.setTitle("Order More", forState: .Normal)
-    orderMoreButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    orderMoreButton.setTitle("Order More", for: UIControlState())
+    orderMoreButton.setTitleColor(UIColor.white, for: UIControlState())
     orderMoreButton.backgroundColor = OATabBarBarTintColor
     orderMoreButton.layer.cornerRadius = 4.0
-    orderMoreButton.addTarget(self, action: #selector(self.orderMoreButtonTapped), forControlEvents: .TouchUpInside)
+    orderMoreButton.addTarget(self, action: #selector(self.orderMoreButtonTapped), for: .touchUpInside)
     containerScrollView.addSubview(orderMoreButton)
     
     checkoutButton = UIButton()
-    checkoutButton.setTitle("Check Out", forState: .Normal)
-    checkoutButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    checkoutButton.setTitle("Check Out", for: UIControlState())
+    checkoutButton.setTitleColor(UIColor.white, for: UIControlState())
     checkoutButton.backgroundColor = OATabBarBarTintColor
     checkoutButton.layer.cornerRadius = 4.0
-    checkoutButton.addTarget(self, action: #selector(self.checkoutButtonTapped), forControlEvents: .TouchUpInside)
+    checkoutButton.addTarget(self, action: #selector(self.checkoutButtonTapped), for: .touchUpInside)
     containerScrollView.addSubview(checkoutButton)
   }
   
   //MARK: Layout Views
   override func layoutSubviews() {
-    orderMoreButton.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 2.0 - 180 / 2.0,
-        36,
-        180,
-        48))
-    checkoutButton.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 2.0 - 180 / 2.0,
-        CGRectGetMaxY(orderMoreButton.frame) + 36,
-        180,
-        48))
+    orderMoreButton.frame = CGRect(
+        x: self.bounds.width / 2.0 - 180 / 2.0,
+        y: 36,
+        width: 180,
+        height: 48).integral
+    checkoutButton.frame = CGRect(
+        x: self.bounds.width / 2.0 - 180 / 2.0,
+        y: orderMoreButton.frame.maxY + 36,
+        width: 180,
+        height: 48).integral
     
     self.containerScrollView.frame = self.bounds
   }
   
   //MARK: Button Action
-  func orderMoreButtonTapped(sender: UIButton!) {
+  func orderMoreButtonTapped(_ sender: UIButton!) {
     delegate.orderMoreButtonTapped(sender)
   }
   
-  func checkoutButtonTapped(sender: UIButton!) {
+  func checkoutButtonTapped(_ sender: UIButton!) {
     delegate.checkoutButtonTapped(sender)
   }
   

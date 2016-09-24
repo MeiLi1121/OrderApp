@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol OAOrderItemViewDelegate : NSObjectProtocol {
-  func addToCartButtonTapped(sender: UIButton!)
+  func addToCartButtonTapped(_ sender: UIButton!)
 }
 
 class OAOrderItemView: UIView {
@@ -32,7 +32,7 @@ class OAOrderItemView: UIView {
   
   //MARK: Life Cycle
   convenience init(itemName: String, delegate: OAOrderItemViewDelegate) {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     
     self.delegate = delegate
     
@@ -66,11 +66,11 @@ class OAOrderItemView: UIView {
     
     // configure button view
     addItemButton = UIButton()
-    addItemButton.setTitle("Add to cart", forState: .Normal)
-    addItemButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    addItemButton.setTitle("Add to cart", for: UIControlState())
+    addItemButton.setTitleColor(UIColor.white, for: UIControlState())
     addItemButton.backgroundColor = OATabBarBarTintColor
     addItemButton.layer.cornerRadius = 4.0
-    addItemButton.addTarget(self, action: #selector(self.buttonTapped), forControlEvents: .TouchUpInside)
+    addItemButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
     containerScrollView.addSubview(addItemButton)
     
     //configure price label
@@ -84,72 +84,64 @@ class OAOrderItemView: UIView {
   override func layoutSubviews() {
     let constrainedWidth = self.bounds.size.width / 2.0 - 2 * OADefaultPadding
     
-    let itemNameLabelBounds = itemNameLabel.sizeThatFits(CGSizeMake(constrainedWidth, CGFloat.max))
+    let itemNameLabelBounds = itemNameLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     let xOffset = self.bounds.size.width / 2.0 - itemNameLabelBounds.width / 2.0
-    itemNameLabel.frame = CGRectIntegral(
-      CGRectMake(
-        xOffset,
-        20,
-        itemNameLabelBounds.width,
-        itemNameLabelBounds.height))
+    itemNameLabel.frame = CGRect(
+        x: xOffset,
+        y: 20,
+        width: itemNameLabelBounds.width,
+        height: itemNameLabelBounds.height).integral
     
-    itemNameSeparator.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(itemNameLabel.frame) + 20,
-        self.bounds.width,
-        1.0 / UIScreen.mainScreen().scale))
+    itemNameSeparator.frame = CGRect(
+        x: 0.0,
+        y: itemNameLabel.frame.maxY + 20,
+        width: self.bounds.width,
+        height: 1.0 / UIScreen.main.scale).integral
     
-    let smallItemRadioViewBounds = smallItemRadioView.sizeThatFits(CGSizeMake(self.bounds.width / 4.0, CGFloat.max))
-    smallItemRadioView.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 4.0,
-        CGRectGetMaxY(itemNameSeparator.frame) + 36,
-        self.bounds.width / 4.0,
-        smallItemRadioViewBounds.height))
+    let smallItemRadioViewBounds = smallItemRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0, height: CGFloat.greatestFiniteMagnitude))
+    smallItemRadioView.frame = CGRect(
+        x: self.bounds.width / 4.0,
+        y: itemNameSeparator.frame.maxY + 36,
+        width: self.bounds.width / 4.0,
+        height: smallItemRadioViewBounds.height).integral
     
-    largeItemRadioView.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 2.0,
-        CGRectGetMaxY(itemNameSeparator.frame) + 36,
-        self.bounds.width / 4.0,
-        smallItemRadioViewBounds.height))
+    largeItemRadioView.frame = CGRect(
+        x: self.bounds.width / 2.0,
+        y: itemNameSeparator.frame.maxY + 36,
+        width: self.bounds.width / 4.0,
+        height: smallItemRadioViewBounds.height).integral
     
-    let stepperViewBounds = stepperView.sizeThatFits(CGSizeMake(self.bounds.width, CGFloat.max))
-    stepperView.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(smallItemRadioView.frame) + 36,
-        self.bounds.width,
-        stepperViewBounds.height))
+    let stepperViewBounds = stepperView.sizeThatFits(CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
+    stepperView.frame = CGRect(
+        x: 0.0,
+        y: smallItemRadioView.frame.maxY + 36,
+        width: self.bounds.width,
+        height: stepperViewBounds.height).integral
     
-    stepperSeparator.frame = CGRectIntegral(
-      CGRectMake(
-        0.0,
-        CGRectGetMaxY(stepperView.frame) + 36,
-        self.bounds.width,
-        1.0 / UIScreen.mainScreen().scale))
+    stepperSeparator.frame = CGRect(
+        x: 0.0,
+        y: stepperView.frame.maxY + 36,
+        width: self.bounds.width,
+        height: 1.0 / UIScreen.main.scale).integral
     
-    addItemButton.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 2.0 - 180 / 2.0,
-        CGRectGetMaxY(stepperSeparator.frame) + 36,
-        180,
-        48))
+    addItemButton.frame = CGRect(
+        x: self.bounds.width / 2.0 - 180 / 2.0,
+        y: stepperSeparator.frame.maxY + 36,
+        width: 180,
+        height: 48).integral
     
-    let priceLabelBounds = priceLabel.sizeThatFits(CGSizeMake(constrainedWidth, CGFloat.max))
-    priceLabel.frame = CGRectIntegral(
-      CGRectMake(
-        self.bounds.width / 2.0 - priceLabelBounds.width / 2.0,
-        CGRectGetMaxY(addItemButton.frame) + OADefaultPadding,
-        priceLabelBounds.width,
-        priceLabelBounds.height))
+    let priceLabelBounds = priceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
+    priceLabel.frame = CGRect(
+        x: self.bounds.width / 2.0 - priceLabelBounds.width / 2.0,
+        y: addItemButton.frame.maxY + OADefaultPadding,
+        width: priceLabelBounds.width,
+        height: priceLabelBounds.height).integral
     
     self.containerScrollView.frame = self.bounds
   }
   
   //MARK: Button Action
-  func buttonTapped(sender: UIButton!) {
+  func buttonTapped(_ sender: UIButton!) {
     delegate.addToCartButtonTapped(sender)
   }
 

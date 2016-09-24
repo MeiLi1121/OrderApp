@@ -22,7 +22,7 @@ class OAOrderMoreOrCheckoutViewController: UIViewController, OAOrderMoreOrChecko
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Order"
-    self.view.backgroundColor = UIColor.whiteColor()
+    self.view.backgroundColor = UIColor.white
     // hide back button
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = true;
@@ -30,11 +30,11 @@ class OAOrderMoreOrCheckoutViewController: UIViewController, OAOrderMoreOrChecko
   
   //MARK: OAOrderMoreOrCheckoutViewDelegate
   
-  func orderMoreButtonTapped(sender: UIButton!) {
+  func orderMoreButtonTapped(_ sender: UIButton!) {
     self.navigationController?.setViewControllers([ OAOrderViewController() ], animated: true)
   }
   
-  func checkoutButtonTapped(sender: UIButton!) {
+  func checkoutButtonTapped(_ sender: UIButton!) {
     self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers![2]
   }
   

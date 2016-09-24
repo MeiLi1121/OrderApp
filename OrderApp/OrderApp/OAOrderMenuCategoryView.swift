@@ -17,7 +17,7 @@ class OAOrderMenuCategoryView: UIView {
   //MARK: Life Cycle
   
   convenience init(dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
-    self.init(frame: CGRectZero)
+    self.init(frame: CGRect.zero)
     self.categoryTableView = UITableView();
     self.categoryTableView?.dataSource = dataSource
     self.categoryTableView?.delegate = delegate
@@ -25,7 +25,7 @@ class OAOrderMenuCategoryView: UIView {
     self.categoryTableView?.tableFooterView = UIView(frame: CGRect.zero)
     self.addSubview(self.categoryTableView!)
     
-    self.backgroundColor = UIColor.whiteColor()
+    self.backgroundColor = UIColor.white
   }
   
   //MARK: Layout

@@ -30,17 +30,17 @@ class OAOrderItemViewController: UIViewController, OAOrderItemViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Order"
-    self.view.backgroundColor = UIColor.whiteColor()
+    self.view.backgroundColor = UIColor.white
     // remove "back" text from back button
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
-                                                            style: .Plain,
+                                                            style: .plain,
                                                             target: nil,
                                                             action: nil)
   }
   
   //MARK: OAOrderItemViewDelegate
   
-  func addToCartButtonTapped(sender: UIButton!) {
+  func addToCartButtonTapped(_ sender: UIButton!) {
     self.navigationController!.pushViewController(OAOrderMoreOrCheckoutViewController(),
                                                   animated: true);
   }

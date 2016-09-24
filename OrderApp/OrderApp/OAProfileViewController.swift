@@ -13,7 +13,7 @@ class OAProfileViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = UIColor.redColor()
+    self.view.backgroundColor = UIColor.red
     self.title = "Profile"
   }
 }
