@@ -30,6 +30,7 @@
 		1F2496321D93931C00A9EB58 /* OAShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */; };
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
+		1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */; };
 		1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */; };
 		1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303161D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift */; };
 		1F9303191D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303181D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift */; };
@@ -85,6 +86,7 @@
 		1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartView.swift; sourceTree = "<group>"; };
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartItemsTableViewCell.swift; sourceTree = "<group>"; };
 		1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStepperView.swift; sourceTree = "<group>"; };
 		1F9303161D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMoreOrCheckoutViewController.swift; sourceTree = "<group>"; };
 		1F9303181D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMoreOrCheckoutView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */,
+				1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */,
 				1F066E471D4572AA00BDAAD9 /* OAShoppingCartViewController.swift in Sources */,
 				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
+				1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
 				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
 				1F9303191D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift in Sources */,

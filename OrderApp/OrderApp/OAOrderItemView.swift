@@ -144,5 +144,4 @@ class OAOrderItemView: UIView {
   func buttonTapped(_ sender: UIButton!) {
     delegate.addToCartButtonTapped(sender)
   }
-
 }

@@ -17,6 +17,8 @@ let OASeparatorColor = UIColor(red: 151.0 / 255, green: 151.0 / 255, blue: 151.0
 
 let OADefaultPadding: CGFloat = 12.0
 
+let OADefaultTableViewHeight: CGFloat = 44.0
+
 let OABoldTextFont: UIFont =  UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightBold)
 let OALargeBoldTextFont: UIFont =  UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightBold)
 let OAPrimaryTextFont: UIFont =  UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)

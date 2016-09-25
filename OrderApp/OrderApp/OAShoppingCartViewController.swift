@@ -8,18 +8,18 @@
 
 import UIKit
 
-class OAShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OAShoppingCartViewController: UIViewController, OAShoppingCartViewDelegate {
   
   //MARK:Properties
   
   var shoppingCartView:OAShoppingCartView?
   let cellIdentifier = "OrderedItemsTableViewCell"
-
+  
   //MARK: Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.shoppingCartView = OAShoppingCartView(dataSource: self, delegate: self)
+    self.shoppingCartView = OAShoppingCartView(delegate: self)
     self.view = self.shoppingCartView
     
     // remove "back" text from back button
@@ -38,18 +38,19 @@ class OAShoppingCartViewController: UIViewController, UITableViewDataSource, UIT
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //TODO: needs to be the number of ordered items
-    return 1;
+    return 3;
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // Table view cells are reused and should be dequeued using a cell identifier.
     // Dequeue cell
-    var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+    var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? OAShoppingCartItemsTableViewCell
     if (cell == nil) {
-      cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
+      cell = OAShoppingCartItemsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
     }
-    cell!.textLabel?.text = "Ma Po Tofu"
-    cell!.detailTextLabel?.text = "$7.89"
+    cell!.nameLabel.text = "Ma Po Tofu"
+    cell!.priceLabel.text = "$7.89"
+    cell!.quantityLabel.text = String(1)
     return cell!
   }
   
@@ -58,4 +59,12 @@ class OAShoppingCartViewController: UIViewController, UITableViewDataSource, UIT
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 44.0;
   }
+  
+  //MARK: OAShoppingCartViewDelegate
+  
+  func nextButtonTapped(_ sender: UIButton!) {
+    self.navigationController!.pushViewController(OAOrderViewController(),
+                                                  animated: true);
+  }
+  
 }
