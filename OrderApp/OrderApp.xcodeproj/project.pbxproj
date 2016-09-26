@@ -31,6 +31,10 @@
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
 		1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */; };
+		1F8AC5701D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC56F1D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift */; };
+		1F8AC5721D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC5711D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift */; };
+		1F8AC5741D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC5731D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift */; };
+		1F8AC5761D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC5751D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift */; };
 		1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */; };
 		1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303161D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift */; };
 		1F9303191D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9303181D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift */; };
@@ -87,6 +91,10 @@
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartItemsTableViewCell.swift; sourceTree = "<group>"; };
+		1F8AC56F1D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartPriceAndTipView.swift; sourceTree = "<group>"; };
+		1F8AC5711D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartOrderTypeViewController.swift; sourceTree = "<group>"; };
+		1F8AC5731D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartContactInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1F8AC5751D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartOrderTypeView.swift; sourceTree = "<group>"; };
 		1F9303121D73FEE600F3A642 /* OAOrderStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStepperView.swift; sourceTree = "<group>"; };
 		1F9303161D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMoreOrCheckoutViewController.swift; sourceTree = "<group>"; };
 		1F9303181D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMoreOrCheckoutView.swift; sourceTree = "<group>"; };
@@ -238,6 +246,9 @@
 			children = (
 				1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */,
 				1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */,
+				1F8AC56F1D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift */,
+				1F8AC5731D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift */,
+				1F8AC5751D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 			children = (
 				1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */,
 				1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */,
+				1F8AC5711D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -495,9 +507,12 @@
 				1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
 				1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */,
+				1F8AC5701D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift in Sources */,
+				1F8AC5761D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1FAE46841D6A3A28005C26A6 /* OAHomeHoursView.swift in Sources */,
 				1FAE46861D6A3B2C005C26A6 /* OAHelpers.swift in Sources */,
+				1F8AC5741D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift in Sources */,
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
 				1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */,
 				1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */,
@@ -507,6 +522,7 @@
 				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
 				1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
+				1F8AC5721D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift in Sources */,
 				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
 				1F9303191D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift in Sources */,
 				1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */,

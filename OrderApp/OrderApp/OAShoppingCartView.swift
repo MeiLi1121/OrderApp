@@ -17,6 +17,7 @@ class OAShoppingCartView: UIView {
   //MARK: Properties
   
   var orderedItemsTableView:UITableView!
+  var priceAndTipView: OAShoppingCartPriceAndTipView!
   
   var nextButton: UIButton!
   
@@ -28,12 +29,13 @@ class OAShoppingCartView: UIView {
     self.init(frame: CGRect.zero)
     
     self.delegate = delegate
+    self.backgroundColor = UIColor.white
     
-    self.orderedItemsTableView = UITableView();
-    self.orderedItemsTableView?.dataSource = delegate
-    self.orderedItemsTableView?.delegate = delegate
+    orderedItemsTableView = UITableView();
+    orderedItemsTableView?.dataSource = delegate
+    orderedItemsTableView?.delegate = delegate
     // remove extra table view cells
-    self.orderedItemsTableView?.tableFooterView = UIView(frame: CGRect.zero)
+    orderedItemsTableView?.tableFooterView = UIView(frame: CGRect.zero)
     self.addSubview(self.orderedItemsTableView!)
     
     
@@ -46,7 +48,9 @@ class OAShoppingCartView: UIView {
     nextButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
     self.addSubview(nextButton)
     
-    self.backgroundColor = UIColor.white
+    // configure price and tip view
+    priceAndTipView = OAShoppingCartPriceAndTipView()
+    self.addSubview(priceAndTipView)
   }
   
   //MARK: Layout
@@ -57,12 +61,19 @@ class OAShoppingCartView: UIView {
       y: self.bounds.height - 20.0 - 48.0 - 44.0,
       width: 180,
       height: 48).integral
-
+    
+    let priceAndTipViewBounds = priceAndTipView.sizeThatFits(CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
+    priceAndTipView.frame = CGRect(
+      x: 0,
+      y: nextButton.frame.minY - priceAndTipViewBounds.height,
+      width: self.bounds.width,
+      height: priceAndTipViewBounds.height).integral
+    
     orderedItemsTableView.frame = CGRect(
       x: 0,
       y: 0,
       width: self.bounds.width,
-      height: self.bounds.height - 40.0 - nextButton.frame.height).integral;
+      height: priceAndTipView.frame.minY).integral;
   }
   
   //MARK: Button Action

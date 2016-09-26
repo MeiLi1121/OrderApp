@@ -75,16 +75,15 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
     
     let quantityLabelBounds = quantityLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     quantityLabel.frame = CGRect(
-      x: addSignView.frame.minX - 8.0 - quantityLabelBounds.width,
+      x: addSignView.frame.minX - 16.0 - quantityLabelBounds.width,
       y: self.bounds.size.height / 2.0 - quantityLabelBounds.height / 2.0,
       width: quantityLabelBounds.width,
       height: quantityLabelBounds.height).integral
     
     minusSignView.frame = CGRect(
-      x: quantityLabel.frame.minX - 8.0 - signWidth,
+      x: quantityLabel.frame.minX - 16.0 - signWidth,
       y: self.bounds.size.height / 2.0 - signWidth / 2.0,
       width: signWidth,
       height: signWidth).integral
   }
 }
-

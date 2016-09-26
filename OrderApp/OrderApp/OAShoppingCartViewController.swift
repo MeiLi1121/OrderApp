@@ -12,7 +12,7 @@ class OAShoppingCartViewController: UIViewController, OAShoppingCartViewDelegate
   
   //MARK:Properties
   
-  var shoppingCartView:OAShoppingCartView?
+  var shoppingCartView: OAShoppingCartView?
   let cellIdentifier = "OrderedItemsTableViewCell"
   
   //MARK: Life Cycle
@@ -63,8 +63,7 @@ class OAShoppingCartViewController: UIViewController, OAShoppingCartViewDelegate
   //MARK: OAShoppingCartViewDelegate
   
   func nextButtonTapped(_ sender: UIButton!) {
-    self.navigationController!.pushViewController(OAOrderViewController(),
+    self.navigationController!.pushViewController(OAShoppingCartOrderTypeViewController(),
                                                   animated: true);
   }
-  
 }
