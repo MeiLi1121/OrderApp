@@ -57,7 +57,7 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
   //MARK: OAShoppingCartViewDelegate
   
   func nextButtonTapped(_ sender: UIButton!) {
-    self.navigationController!.pushViewController(OAOrderViewController(),
+    self.navigationController!.pushViewController(OAShoppingCartConfirmationViewController(),
                                                   animated: true);
   }
 }

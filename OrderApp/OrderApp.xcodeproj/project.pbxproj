@@ -23,6 +23,8 @@
 		1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */; };
 		1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */; };
 		1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */; };
+		1F089DAA1DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F089DA91DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift */; };
+		1F089DAC1DC7039800F2877E /* OAShoppingCartConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F089DAB1DC7039800F2877E /* OAShoppingCartConfirmationView.swift */; };
 		1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */; };
 		1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */; };
 		1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */; };
@@ -83,6 +85,8 @@
 		1F066E4F1D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderMenuCategoryView.swift; sourceTree = "<group>"; };
 		1F066E531D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryViewController.swift; sourceTree = "<group>"; };
 		1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryView.swift; sourceTree = "<group>"; };
+		1F089DA91DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartComfirmationViewController.swift; sourceTree = "<group>"; };
+		1F089DAB1DC7039800F2877E /* OAShoppingCartConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartConfirmationView.swift; sourceTree = "<group>"; };
 		1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OADishGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemViewController.swift; sourceTree = "<group>"; };
 		1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemView.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				1F8AC56F1D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift */,
 				1F8AC5731D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift */,
 				1F8AC5751D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift */,
+				1F089DAB1DC7039800F2877E /* OAShoppingCartConfirmationView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				1F066E461D4572AA00BDAAD9 /* OAShoppingCartViewController.swift */,
 				1F066E481D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift */,
 				1F8AC5711D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift */,
+				1F089DA91DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -516,9 +522,11 @@
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
 				1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */,
 				1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */,
+				1F089DAA1DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift in Sources */,
 				1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */,
 				1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */,
 				1F066E471D4572AA00BDAAD9 /* OAShoppingCartViewController.swift in Sources */,
+				1F089DAC1DC7039800F2877E /* OAShoppingCartConfirmationView.swift in Sources */,
 				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
 				1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
