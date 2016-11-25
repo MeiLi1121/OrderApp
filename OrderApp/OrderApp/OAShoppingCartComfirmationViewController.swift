@@ -34,4 +34,5 @@ class OAShoppingCartConfirmationViewController: UIViewController, OAShoppingCart
     
     func rateUsOnYelpButtonTapped(_ sender: UIButton!) {
         
-    }}
+    }
+}

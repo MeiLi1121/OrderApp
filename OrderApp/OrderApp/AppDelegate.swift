@@ -17,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    let tabBarController = OAMainTabBarController()
+    //let tabBarController = OAMainTabBarController()
+    let navigationController = UINavigationController()
+    let loginViewController = OALoginViewController()
+    navigationController.viewControllers = [loginViewController ]
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
-    window?.rootViewController = tabBarController
+    window?.rootViewController = navigationController
     
     FIRApp.configure()
     FIRDatabase.database().persistenceEnabled = true

@@ -44,6 +44,8 @@
 		1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46811D69789E005C26A6 /* OAHomeView.swift */; };
 		1FAE46841D6A3A28005C26A6 /* OAHomeHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46831D6A3A28005C26A6 /* OAHomeHoursView.swift */; };
 		1FAE46861D6A3B2C005C26A6 /* OAHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46851D6A3B2C005C26A6 /* OAHelpers.swift */; };
+		1FC4986A1DE7FC0A0011760E /* OALoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498691DE7FC0A0011760E /* OALoginView.swift */; };
+		1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4986B1DE7FC1B0011760E /* OALoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,9 @@
 		1FAE46811D69789E005C26A6 /* OAHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeView.swift; sourceTree = "<group>"; };
 		1FAE46831D6A3A28005C26A6 /* OAHomeHoursView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHomeHoursView.swift; sourceTree = "<group>"; };
 		1FAE46851D6A3B2C005C26A6 /* OAHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAHelpers.swift; sourceTree = "<group>"; };
+		1FC498691DE7FC0A0011760E /* OALoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OALoginView.swift; sourceTree = "<group>"; };
+		1FC4986B1DE7FC1B0011760E /* OALoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OALoginViewController.swift; sourceTree = "<group>"; };
+		1FC4986D1DE815AE0011760E /* OrderApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderApp.entitlements; sourceTree = "<group>"; };
 		2089C087F06B39F902EF1A52 /* Pods-OrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		43E9D043668AA494A897E8A6 /* Pods-OrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +165,8 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1FC4986D1DE815AE0011760E /* OrderApp.entitlements */,
+				1FC498661DE7F7670011760E /* Login */,
 				1F89FB111D616FCF002F50BD /* Utils */,
 				1F987FAA1D4D44BD00BD3F54 /* GoogleService-Info.plist */,
 				1F066E4A1D45777900BDAAD9 /* Home */,
@@ -297,6 +304,31 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		1FC498661DE7F7670011760E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1FC498681DE7F7850011760E /* Views */,
+				1FC498671DE7F7730011760E /* ViewControllers */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		1FC498671DE7F7730011760E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FC4986B1DE7FC1B0011760E /* OALoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1FC498681DE7F7850011760E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FC498691DE7FC0A0011760E /* OALoginView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		536F95BB0B0B1C30C2852E56 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +420,9 @@
 						DevelopmentTeam = 4HSPGN45JG;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -509,6 +544,7 @@
 				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
 				1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */,
+				1FC4986A1DE7FC0A0011760E /* OALoginView.swift in Sources */,
 				1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */,
 				1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
@@ -536,6 +572,7 @@
 				1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */,
 				1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */,
 				1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */,
+				1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */,
 				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = OrderApp/OrderApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OrderApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -691,6 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = OrderApp/OrderApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OrderApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

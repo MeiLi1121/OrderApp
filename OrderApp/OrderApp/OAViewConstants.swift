@@ -14,6 +14,8 @@ let OANavigationBarTextColor = UIColor.white
 let OATabBarBarTintColor = UIColor(red: 104.0 / 255, green: 4.0 / 255, blue: 82.0 / 255, alpha: 1)
 let OATabBarTintColor = UIColor.white
 let OASeparatorColor = UIColor(red: 151.0 / 255, green: 151.0 / 255, blue: 151.0 / 255, alpha: 1)
+let OALoginButtonColor = UIColor(red: 255.0 / 255, green: 149.0 / 255, blue: 0.0 / 255, alpha: 1)
+let OASignUpButtonColor = UIColor(red: 26.0 / 255, green: 214.0 / 255, blue: 253.0 / 255, alpha: 1)
 
 let OADefaultPadding: CGFloat = 12.0
 
