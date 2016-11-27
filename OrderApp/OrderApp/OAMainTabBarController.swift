@@ -10,6 +10,21 @@ import UIKit
 
 class OAMainTabBarController: UITabBarController {
     
+    var userSession: OAUserSession?
+    
+    init(userSession: OAUserSession?) {
+        self.userSession = userSession
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init() {
+        self.init(userSession: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -47,7 +47,10 @@ class OALoginViewController: UIViewController, OALoginViewDelegate {
                     self.present(alert, animated: true, completion: nil)
                     return
                 }
-                self.navigationController!.setViewControllers([ OAMainTabBarController() ], animated: true)
+                if let user = user {
+                    let userSession = OAUserSession(currentUser: OAUser(authData: user))
+                    self.navigationController!.setViewControllers([ OAMainTabBarController(userSession: userSession) ], animated: true)
+                }
             }
         } else {
             let alert = UIAlertController(title: "Error", message: "User Name or Password can't be empty", preferredStyle: UIAlertControllerStyle.alert)

@@ -46,6 +46,13 @@
 		1FAE46861D6A3B2C005C26A6 /* OAHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE46851D6A3B2C005C26A6 /* OAHelpers.swift */; };
 		1FC4986A1DE7FC0A0011760E /* OALoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498691DE7FC0A0011760E /* OALoginView.swift */; };
 		1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4986B1DE7FC1B0011760E /* OALoginViewController.swift */; };
+		1FC498701DEA04370011760E /* OAUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4986F1DEA04370011760E /* OAUser.swift */; };
+		1FC498721DEA06E90011760E /* OAOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498711DEA06E90011760E /* OAOrderItem.swift */; };
+		1FC498741DEA0B170011760E /* OAAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498731DEA0B170011760E /* OAAddress.swift */; };
+		1FC498761DEA0F8E0011760E /* OACreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498751DEA0F8E0011760E /* OACreditCard.swift */; };
+		1FC498781DEA6D900011760E /* OAOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498771DEA6D900011760E /* OAOrder.swift */; };
+		1FC4987A1DEA810A0011760E /* OAOrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498791DEA810A0011760E /* OAOrderStore.swift */; };
+		1FC4987C1DEA9D850011760E /* OAUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4987B1DEA9D850011760E /* OAUserSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +118,13 @@
 		1FC498691DE7FC0A0011760E /* OALoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OALoginView.swift; sourceTree = "<group>"; };
 		1FC4986B1DE7FC1B0011760E /* OALoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OALoginViewController.swift; sourceTree = "<group>"; };
 		1FC4986D1DE815AE0011760E /* OrderApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderApp.entitlements; sourceTree = "<group>"; };
+		1FC4986F1DEA04370011760E /* OAUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAUser.swift; sourceTree = "<group>"; };
+		1FC498711DEA06E90011760E /* OAOrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItem.swift; sourceTree = "<group>"; };
+		1FC498731DEA0B170011760E /* OAAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAAddress.swift; sourceTree = "<group>"; };
+		1FC498751DEA0F8E0011760E /* OACreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OACreditCard.swift; sourceTree = "<group>"; };
+		1FC498771DEA6D900011760E /* OAOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrder.swift; sourceTree = "<group>"; };
+		1FC498791DEA810A0011760E /* OAOrderStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStore.swift; sourceTree = "<group>"; };
+		1FC4987B1DEA9D850011760E /* OAUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAUserSession.swift; sourceTree = "<group>"; };
 		2089C087F06B39F902EF1A52 /* Pods-OrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		43E9D043668AA494A897E8A6 /* Pods-OrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +179,7 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1FC4986E1DEA04080011760E /* DataModels */,
 				1FC4986D1DE815AE0011760E /* OrderApp.entitlements */,
 				1FC498661DE7F7670011760E /* Login */,
 				1F89FB111D616FCF002F50BD /* Utils */,
@@ -327,6 +342,20 @@
 				1FC498691DE7FC0A0011760E /* OALoginView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1FC4986E1DEA04080011760E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				1FC4986F1DEA04370011760E /* OAUser.swift */,
+				1FC498711DEA06E90011760E /* OAOrderItem.swift */,
+				1FC498731DEA0B170011760E /* OAAddress.swift */,
+				1FC498751DEA0F8E0011760E /* OACreditCard.swift */,
+				1FC498771DEA6D900011760E /* OAOrder.swift */,
+				1FC498791DEA810A0011760E /* OAOrderStore.swift */,
+				1FC4987B1DEA9D850011760E /* OAUserSession.swift */,
+			);
+			name = DataModels;
 			sourceTree = "<group>";
 		};
 		536F95BB0B0B1C30C2852E56 /* Pods */ = {
@@ -543,10 +572,14 @@
 				1F2496321D93931C00A9EB58 /* OAShoppingCartView.swift in Sources */,
 				1F066E4E1D4577DD00BDAAD9 /* OAHomeNavigationController.swift in Sources */,
 				1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */,
+				1FC498741DEA0B170011760E /* OAAddress.swift in Sources */,
 				1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */,
 				1FC4986A1DE7FC0A0011760E /* OALoginView.swift in Sources */,
 				1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */,
 				1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */,
+				1FC498721DEA06E90011760E /* OAOrderItem.swift in Sources */,
+				1FC498781DEA6D900011760E /* OAOrder.swift in Sources */,
+				1FC4987C1DEA9D850011760E /* OAUserSession.swift in Sources */,
 				1F066E491D4572D000BDAAD9 /* OAShoppingCartNavigationController.swift in Sources */,
 				1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */,
 				1F8AC5701D983E0F00DDFC92 /* OAShoppingCartPriceAndTipView.swift in Sources */,
@@ -558,6 +591,7 @@
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
 				1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */,
 				1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */,
+				1FC498761DEA0F8E0011760E /* OACreditCard.swift in Sources */,
 				1F089DAA1DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift in Sources */,
 				1F066E541D45B48A00BDAAD9 /* OAOrderSpecificCategoryViewController.swift in Sources */,
 				1F066E501D45A0DC00BDAAD9 /* OAOrderMenuCategoryView.swift in Sources */,
@@ -566,12 +600,14 @@
 				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
 				1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */,
 				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
+				1FC4987A1DEA810A0011760E /* OAOrderStore.swift in Sources */,
 				1F8AC5721D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift in Sources */,
 				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
 				1F9303191D740FEE00F3A642 /* OAOrderMoreOrCheckoutView.swift in Sources */,
 				1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */,
 				1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */,
 				1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */,
+				1FC498701DEA04370011760E /* OAUser.swift in Sources */,
 				1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */,
 				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
