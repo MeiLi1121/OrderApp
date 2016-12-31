@@ -8,6 +8,9 @@
 
 import UIKit
 
+let kContactTableViewInset: CGFloat = 20.0
+let kContactFieldArray: [String] = ["Name", "Street", "City", "State", "Phone", "Email"]
+
 class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrderTypeViewDelegate {
   
   //MARK:Properties
@@ -24,6 +27,7 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
     
     self.title = "Select Order Type"
     self.view.backgroundColor = UIColor.white
+    self.automaticallyAdjustsScrollViewInsets = false
   }
   
   //MARK: UITableViewDataSource
@@ -33,8 +37,7 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //TODO: needs to be the number of ordered items
-    return 3;
+    return kContactFieldArray.count;
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,14 +47,48 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
     if (cell == nil) {
       cell = OAShoppingCartContactInfoTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
     }
-    cell!.fieldNameLabel.text = "Name"
+    cell!.fieldNameLabel.text = kContactFieldArray[indexPath.row]
+    if (indexPath.row == 0) {
+      cell!.fieldTextField.becomeFirstResponder()
+    }
     return cell!
   }
   
   //MARK: UITableViewDelegate
   
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return kOADefaultTableViewCellHeight;
+  }
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 44.0;
+    return kOADefaultTableViewCellHeight;
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let headerView = UIView()
+    let textLabel = UILabel()
+    textLabel.text = "Deliver To"
+    textLabel.font = OABoldTextFont
+    textLabel.sizeToFit()
+    textLabel.frame = CGRect(x: kContactTableViewInset,
+                             y: 0,
+                             width: textLabel.frame.size.width,
+                             height: kOADefaultTableViewCellHeight)
+    headerView.addSubview(textLabel)
+    let separator = UIView();
+    separator.frame = CGRect(
+      x: 0.0,
+      y: kOADefaultTableViewCellHeight,
+      width: tableView.frame.size.width,
+      height: 1.0 / UIScreen.main.scale)
+    separator.backgroundColor = OASeparatorColor
+    headerView.addSubview(separator)
+    headerView.frame = CGRect(x: 0,
+                              y: 0,
+                              width: tableView.frame.size.width,
+                              height: kOADefaultTableViewCellHeight)
+    headerView.backgroundColor = UIColor.white
+    return headerView;
   }
   
   //MARK: OAShoppingCartViewDelegate

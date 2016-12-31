@@ -52,23 +52,23 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    let constrainedWidth = self.contentView.bounds.size.width / 2.0 - 2 * OADefaultPadding
+    let constrainedWidth = self.contentView.bounds.size.width / 2.0 - 2 * kOADefaultPadding
     let nameLabelBounds = nameLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     nameLabel.frame = CGRect(
-      x: OADefaultPadding,
+      x: kOADefaultPadding,
       y: 4.0,
       width: nameLabelBounds.width,
       height: nameLabelBounds.height).integral
     
     let priceLabelBounds = priceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     priceLabel.frame = CGRect(
-      x: OADefaultPadding,
+      x: kOADefaultPadding,
       y: nameLabel.frame.maxY + 4.0,
       width: priceLabelBounds.width,
       height: priceLabelBounds.height).integral
     
     addSignView.frame = CGRect(
-      x: self.contentView.bounds.size.width - OADefaultPadding - signWidth,
+      x: self.contentView.bounds.size.width - kOADefaultPadding - signWidth,
       y: self.contentView.bounds.size.height / 2.0 - signWidth / 2.0,
       width: signWidth,
       height: signWidth).integral

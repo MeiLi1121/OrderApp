@@ -124,19 +124,19 @@ class OAHomeView: UIView {
   //MARK: Layout Views
   
   override func layoutSubviews() {
-    let constrainedWidth = self.bounds.size.width - 2 * OADefaultPadding
+    let constrainedWidth = self.bounds.size.width - 2 * kOADefaultPadding
     let constrainedHeight = self.bounds.size.height
     let descriptionLabelBounds = self.descriptionLabel.sizeThatFits(CGSize(width: constrainedWidth, height: constrainedHeight))
     self.descriptionLabel.frame = CGRect(
-        x: OADefaultPadding,
+        x: kOADefaultPadding,
         // have to add 20 for status bar and 44 for navigation bar but don't know why
-        y: OADefaultPadding,
+        y: kOADefaultPadding,
         width: descriptionLabelBounds.width,
         height: descriptionLabelBounds.height).integral
    
     self.descriptionSeparator.frame = CGRect(
         x: 0.0,
-        y: self.descriptionLabel.frame.maxY + OADefaultPadding,
+        y: self.descriptionLabel.frame.maxY + kOADefaultPadding,
         width: self.bounds.width,
         height: 1.0 / UIScreen.main.scale).integral
     
@@ -152,16 +152,16 @@ class OAHomeView: UIView {
         width: self.bounds.width,
         height: 1.0 / UIScreen.main.scale).integral
     
-    let hoursViewBounds = self.hoursView.sizeThatFits(CGSize(width: self.bounds.width, height: self.bounds.height - self.dishGalleryCollectionView.frame.maxY - OADefaultPadding))
+    let hoursViewBounds = self.hoursView.sizeThatFits(CGSize(width: self.bounds.width, height: self.bounds.height - self.dishGalleryCollectionView.frame.maxY - kOADefaultPadding))
     self.hoursView.frame = CGRect(
         x: 0.0,
-        y: self.dishGalleryCollectionViewSeparator.frame.maxY + OADefaultPadding,
+        y: self.dishGalleryCollectionViewSeparator.frame.maxY + kOADefaultPadding,
         width: hoursViewBounds.width,
         height: hoursViewBounds.height).integral
     
     self.hoursSeparator.frame = CGRect(
         x: 0.0,
-        y: self.hoursView.frame.maxY + OADefaultPadding,
+        y: self.hoursView.frame.maxY + kOADefaultPadding,
         width: self.bounds.width,
         height: 1.0 / UIScreen.main.scale).integral
     

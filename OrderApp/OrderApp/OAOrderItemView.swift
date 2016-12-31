@@ -82,7 +82,7 @@ class OAOrderItemView: UIView {
   
   //MARK: Layout Views
   override func layoutSubviews() {
-    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * OADefaultPadding
+    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * kOADefaultPadding
     
     let itemNameLabelBounds = itemNameLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     let xOffset = self.bounds.size.width / 2.0 - itemNameLabelBounds.width / 2.0
@@ -133,7 +133,7 @@ class OAOrderItemView: UIView {
     let priceLabelBounds = priceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     priceLabel.frame = CGRect(
         x: self.bounds.width / 2.0 - priceLabelBounds.width / 2.0,
-        y: addItemButton.frame.maxY + OADefaultPadding,
+        y: addItemButton.frame.maxY + kOADefaultPadding,
         width: priceLabelBounds.width,
         height: priceLabelBounds.height).integral
     

@@ -46,7 +46,7 @@ class OAHomeHoursView: UIView {
   //MARK: Layout Views
   override func layoutSubviews() {
     var currentY: CGFloat = 0.0;
-    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * OADefaultPadding
+    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * kOADefaultPadding
     
     let dineInTitleLabelBounds = dineInTitleLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     let xOffset = self.bounds.size.width / 2.0 - dineInTitleLabelBounds.width / 2.0
@@ -79,7 +79,7 @@ class OAHomeHoursView: UIView {
   
   override func sizeThatFits(_ size: CGSize) -> CGSize {
     var height: CGFloat = 0.0;
-    let constrainedWidth = self.bounds.size.width - 2 * OADefaultPadding
+    let constrainedWidth = self.bounds.size.width - 2 * kOADefaultPadding
     let titleLabelBounds = dineInTitleLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     height += titleLabelBounds.height + 8.0
     for label in dineInWeekdayLabelArray {

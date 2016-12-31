@@ -43,7 +43,7 @@ class OAOrderStepperView: UIView {
   
   //MARK: Layout Views
   override func layoutSubviews() {
-    let totalWidth = signWidth * 2 + OADefaultPadding * 2 + textLabelWidth
+    let totalWidth = signWidth * 2 + kOADefaultPadding * 2 + textLabelWidth
     let xOffset = self.bounds.size.width / 2.0 - totalWidth / 2.0
     
     minusSignView.frame = CGRect(
@@ -53,20 +53,20 @@ class OAOrderStepperView: UIView {
         height: signWidth).integral
     
     textLabel.frame = CGRect(
-        x: minusSignView.frame.maxX + OADefaultPadding,
+        x: minusSignView.frame.maxX + kOADefaultPadding,
         y: self.bounds.size.height / 2.0 - textLabelHeight / 2.0,
         width: textLabelWidth,
         height: textLabelHeight).integral
     
     addSignView.frame = CGRect(
-        x: textLabel.frame.maxX + OADefaultPadding,
+        x: textLabel.frame.maxX + kOADefaultPadding,
         y: self.bounds.size.height / 2.0 - signWidth / 2.0,
         width: signWidth,
         height: signWidth).integral
   }
   
   override func sizeThatFits(_ size: CGSize) -> CGSize {
-    return CGSize(width: signWidth * 2 + OADefaultPadding * 2 + textLabelWidth,
+    return CGSize(width: signWidth * 2 + kOADefaultPadding * 2 + textLabelWidth,
                       height: max(signWidth, textLabelHeight))
   }
   

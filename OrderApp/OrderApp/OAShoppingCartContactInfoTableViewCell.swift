@@ -37,18 +37,18 @@ class OAShoppingCartContactInfoTableViewCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    let constrainedWidth = self.contentView.bounds.size.width - 2 * OADefaultPadding
+    let constrainedWidth = self.contentView.bounds.size.width - 2 * kOADefaultPadding
     let fieldNameLabelBounds = fieldNameLabel.sizeThatFits(CGSize(width: constrainedWidth, height: CGFloat.greatestFiniteMagnitude))
     fieldNameLabel.frame = CGRect(
-      x: OADefaultPadding,
+      x: kContactTableViewInset,
       y: 0,
       width: fieldNameLabelBounds.width,
       height: self.bounds.height).integral
     
     fieldTextField.frame = CGRect(
-      x: fieldNameLabel.frame.maxX + OADefaultPadding,
+      x: fieldNameLabel.frame.maxX + kOADefaultPadding,
       y: 0,
-      width: constrainedWidth - fieldNameLabel.frame.maxX - OADefaultPadding,
+      width: constrainedWidth - fieldNameLabel.frame.maxX - kOADefaultPadding,
       height: self.bounds.height).integral
   }
 }

@@ -17,9 +17,10 @@ let OASeparatorColor = UIColor(red: 151.0 / 255, green: 151.0 / 255, blue: 151.0
 let OALoginButtonColor = UIColor(red: 255.0 / 255, green: 149.0 / 255, blue: 0.0 / 255, alpha: 1)
 let OASignUpButtonColor = UIColor(red: 26.0 / 255, green: 214.0 / 255, blue: 253.0 / 255, alpha: 1)
 
-let OADefaultPadding: CGFloat = 12.0
-
-let OADefaultTableViewHeight: CGFloat = 44.0
+let kOADefaultPadding: CGFloat = 12.0
+let kOATabBarHeight: CGFloat = 44.0
+let kOADefaultTableViewCellHeight: CGFloat = 44.0
+let kOATopLayoutOffset: CGFloat = 64.0
 
 let OABoldTextFont: UIFont =  UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightBold)
 let OALargeBoldTextFont: UIFont =  UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightBold)

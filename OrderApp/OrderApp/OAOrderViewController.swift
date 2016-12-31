@@ -80,7 +80,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     // should define desired height
-    return OADefaultTableViewHeight;
+    return kOADefaultTableViewCellHeight;
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

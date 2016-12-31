@@ -14,16 +14,18 @@ public protocol OAShoppingCartOrderTypeViewDelegate : UITableViewDataSource, UIT
 
 class OAShoppingCartOrderTypeView: UIView {
   
-  //MARK: Properties
+  //MARK: Private Properties
   
-  var contantInfoTableView: UITableView!
+  private var contactInfoTableView: UITableView!
+  private var nextButton: UIButton!
+  private var pickUpRadioView: OARadioButtonTextLabelView!
+  private var deliverRadioView: OARadioButtonTextLabelView!
   
-  var nextButton: UIButton!
+  weak private var delegate: OAShoppingCartOrderTypeViewDelegate!
   
-  var pickUpRadioView: OARadioButtonTextLabelView!
-  var deliverRadioView: OARadioButtonTextLabelView!
-  
-  weak var delegate: OAShoppingCartOrderTypeViewDelegate!
+  //MARK: Private Constant
+  private let kNextButtonWidth: CGFloat = 180.0
+  private let kNextButtonHeight: CGFloat = 48.0
   
   //MARK: Life Cycle
   
@@ -31,20 +33,31 @@ class OAShoppingCartOrderTypeView: UIView {
     self.init(frame: CGRect.zero)
     
     self.delegate = delegate
-
     
-    contantInfoTableView = UITableView();
-    contantInfoTableView?.dataSource = delegate
-    contantInfoTableView?.delegate = delegate
+    // configure contact info table view
+    contactInfoTableView = UITableView();
+    contactInfoTableView.dataSource = delegate
+    contactInfoTableView.delegate = delegate
     // remove extra table view cells
-    contantInfoTableView?.tableFooterView = UIView(frame: CGRect.zero)
-    self.addSubview(self.contantInfoTableView!)
+    contactInfoTableView.tableFooterView = UIView(frame: CGRect.zero)
+    contactInfoTableView.separatorInset = UIEdgeInsets.zero
+    contactInfoTableView.separatorColor = OASeparatorColor
+    self.addSubview(contactInfoTableView)
     
     //configure item radio views
-    pickUpRadioView = OARadioButtonTextLabelView(text: "Pick Up", isChecked: false)
-    self.addSubview(self.pickUpRadioView!)
-    deliverRadioView = OARadioButtonTextLabelView(text: "Deliver", isChecked: true)
-    self.addSubview(self.deliverRadioView!)
+    pickUpRadioView = OARadioButtonTextLabelView(text: "Pick Up",
+                                                 isChecked: false)
+    pickUpRadioView.isUserInteractionEnabled = true
+    self.addSubview(pickUpRadioView)
+    pickUpRadioView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                action: #selector(self.handlePickUpTap)))
+    
+    deliverRadioView = OARadioButtonTextLabelView(text: "Deliver",
+                                                  isChecked: true)
+    deliverRadioView.isUserInteractionEnabled = true
+    self.addSubview(self.deliverRadioView)
+    deliverRadioView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                 action: #selector(self.handleDeliverTap)))
     
     // configure button view
     nextButton = UIButton()
@@ -59,8 +72,9 @@ class OAShoppingCartOrderTypeView: UIView {
   //MARK: Layout
   
   override func layoutSubviews() {
-    let yOffset: CGFloat = 64.0 + 36.0
-    let pickUpRadioViewBounds = pickUpRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0, height: CGFloat.greatestFiniteMagnitude))
+    let yOffset: CGFloat = kOATopLayoutOffset + 36.0
+    let pickUpRadioViewBounds = pickUpRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0,
+                                                                    height: CGFloat.greatestFiniteMagnitude))
     pickUpRadioView.frame = CGRect(
       x: self.bounds.width / 8.0,
       y: yOffset,
@@ -74,18 +88,30 @@ class OAShoppingCartOrderTypeView: UIView {
       height: pickUpRadioViewBounds.height).integral
     
     nextButton.frame = CGRect(
-      x: self.bounds.width / 2.0 - 180 / 2.0,
-      y: self.bounds.height - 20.0 - 48.0 - 44.0,
-      width: 180,
-      height: 48).integral
+      x: self.bounds.width / 2.0 - kNextButtonWidth / 2.0,
+      y: self.bounds.height - kNextButtonHeight - kOATabBarHeight - 20.0,
+      width: kNextButtonWidth,
+      height: kNextButtonHeight).integral
     
-    contantInfoTableView.frame = CGRect(
+    contactInfoTableView.frame = CGRect(
       x: 0,
-      y: pickUpRadioView.frame.maxY + OADefaultPadding - 64.0,
+      y: pickUpRadioView.frame.maxY,
       width: self.bounds.width,
-      height: nextButton.frame.minY - pickUpRadioView.frame.maxY - OADefaultPadding).integral;
+      height: nextButton.frame.minY - pickUpRadioView.frame.maxY - kOADefaultPadding).integral;
   }
-
+  
+  //MARK: UIGestureRecognizer
+  
+  func handlePickUpTap(_ sender: UITapGestureRecognizer) {
+    pickUpRadioView.isChecked = true
+    deliverRadioView.isChecked = false
+  }
+  
+  func handleDeliverTap(_ sender: UITapGestureRecognizer) {
+    pickUpRadioView.isChecked = false
+    deliverRadioView.isChecked = true
+  }
+  
   //MARK: Button Action
   func buttonTapped(_ sender: UIButton!) {
     delegate.nextButtonTapped(sender)

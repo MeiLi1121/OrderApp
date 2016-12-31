@@ -10,17 +10,19 @@ import UIKit
 
 class OARadioButtonTextLabelView: UIView {
   
-  var radioButtonView: UIImageView!
-  var textLabel: UILabel!
+  private var radioButtonView: UIImageView!
+  private var textLabel: UILabel!
+  private var _isChecked: Bool!
   
-  let radioButtonWidth: CGFloat = 24.0
+  private let radioButtonWidth: CGFloat = 24.0
   
   //MARK: Life Cycle
   convenience init(text: String, isChecked: Bool) {
     self.init(frame: CGRect.zero)
     
     // configure radio button
-    let image = isChecked ? UIImage(named:"radiochecked") : UIImage(named:"radiounchecked")
+    _isChecked = isChecked
+    let image = Bool(_isChecked) ? UIImage(named:"radiochecked") : UIImage(named:"radiounchecked")
     radioButtonView = UIImageView(image: image)
     self.addSubview(radioButtonView)
     
@@ -31,10 +33,24 @@ class OARadioButtonTextLabelView: UIView {
     self.addSubview(textLabel)
   }
   
+  //MARK: Public APIs
+  
+  var isChecked: Bool {
+    get {
+      return _isChecked
+    }
+    set {
+      if (_isChecked != newValue) {
+        _isChecked = newValue
+        radioButtonView.image = Bool(_isChecked) ? UIImage(named:"radiochecked") : UIImage(named:"radiounchecked")
+      }
+    }
+  }
+  
   //MARK: Layout Views
   override func layoutSubviews() {
     let textLabelBounds = textLabel.sizeThatFits(CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
-    let totalWidth = radioButtonWidth + OADefaultPadding + textLabelBounds.width
+    let totalWidth = radioButtonWidth + kOADefaultPadding + textLabelBounds.width
     let xOffset = self.bounds.size.width / 2.0 - totalWidth / 2.0
     
     radioButtonView.frame = CGRect(
@@ -44,7 +60,7 @@ class OARadioButtonTextLabelView: UIView {
         height: radioButtonWidth).integral
     
     textLabel.frame = CGRect(
-        x: radioButtonView.frame.maxX + OADefaultPadding,
+        x: radioButtonView.frame.maxX + kOADefaultPadding,
         y: self.bounds.size.height / 2.0 - textLabelBounds.height / 2.0,
         width: textLabelBounds.width,
         height: textLabelBounds.height).integral
@@ -52,7 +68,7 @@ class OARadioButtonTextLabelView: UIView {
   
   override func sizeThatFits(_ size: CGSize) -> CGSize {
     let textLabelBounds = textLabel.sizeThatFits(CGSize(width: size.width, height: CGFloat.greatestFiniteMagnitude))
-    return CGSize(width: radioButtonWidth + OADefaultPadding + textLabelBounds.width,
+    return CGSize(width: radioButtonWidth + kOADefaultPadding + textLabelBounds.width,
                       height: max(radioButtonWidth, textLabelBounds.height))
   }
   

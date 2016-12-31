@@ -76,8 +76,8 @@ class OAShoppingCartPriceAndTipView: UIView {
   
   //MARK: Layout Views
   override func layoutSubviews() {
-    var currentY: CGFloat = OADefaultPadding;
-    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * OADefaultPadding
+    var currentY: CGFloat = kOADefaultPadding;
+    let constrainedWidth = self.bounds.size.width / 2.0 - 2 * kOADefaultPadding
     
     let orderTotalPriceLabelBounds = orderTotalPriceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     orderTotalPriceLabel.frame = CGRect(
@@ -88,7 +88,7 @@ class OAShoppingCartPriceAndTipView: UIView {
     
     let orderTotalTextLabelBounds = orderTotalTextLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     orderTotalTextLabel.frame = CGRect(
-      x: orderTotalPriceLabel.frame.minX - OADefaultPadding - orderTotalTextLabelBounds.width,
+      x: orderTotalPriceLabel.frame.minX - kOADefaultPadding - orderTotalTextLabelBounds.width,
       y: currentY,
       width: orderTotalTextLabelBounds.width,
       height: orderTotalTextLabelBounds.height).integral
@@ -104,7 +104,7 @@ class OAShoppingCartPriceAndTipView: UIView {
     
     let orderTaxTextLabelBounds = orderTaxTextLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     orderTaxTextLabel.frame = CGRect(
-      x: orderTaxPriceLabel.frame.minX - OADefaultPadding - orderTaxTextLabelBounds.width,
+      x: orderTaxPriceLabel.frame.minX - kOADefaultPadding - orderTaxTextLabelBounds.width,
       y: currentY,
       width: orderTaxTextLabelBounds.width,
       height: orderTaxTextLabelBounds.height).integral
@@ -130,13 +130,13 @@ class OAShoppingCartPriceAndTipView: UIView {
   }
   
   override func sizeThatFits(_ size: CGSize) -> CGSize {
-    var height: CGFloat = OADefaultPadding;
-    let constrainedWidth = self.bounds.size.width - 2 * OADefaultPadding
+    var height: CGFloat = kOADefaultPadding;
+    let constrainedWidth = self.bounds.size.width - 2 * kOADefaultPadding
     let orderTotalPriceLabelBounds = orderTotalPriceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     height += orderTotalPriceLabelBounds.height + 4.0
     let orderTaxPriceLabelBounds = orderTaxPriceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     height += orderTaxPriceLabelBounds.height + 4.0
-    height += 26.0 + OADefaultPadding
+    height += 26.0 + kOADefaultPadding
     return CGSize(width: size.width, height: height)
   }
 }
