@@ -16,7 +16,7 @@ class OAShoppingCartOrderTypeView: UIView {
   
   //MARK: Private Properties
   
-  private var contactInfoTableView: UITableView!
+  var contactInfoTableView: UITableView!
   private var nextButton: UIButton!
   private var pickUpRadioView: OARadioButtonTextLabelView!
   private var deliverRadioView: OARadioButtonTextLabelView!
@@ -42,6 +42,7 @@ class OAShoppingCartOrderTypeView: UIView {
     contactInfoTableView.tableFooterView = UIView(frame: CGRect.zero)
     contactInfoTableView.separatorInset = UIEdgeInsets.zero
     contactInfoTableView.separatorColor = OASeparatorColor
+    contactInfoTableView.alwaysBounceVertical = false
     self.addSubview(contactInfoTableView)
     
     //configure item radio views
@@ -72,7 +73,7 @@ class OAShoppingCartOrderTypeView: UIView {
   //MARK: Layout
   
   override func layoutSubviews() {
-    let yOffset: CGFloat = kOATopLayoutOffset + 36.0
+    let yOffset: CGFloat = kOATopLayoutOffset + 20.0
     let pickUpRadioViewBounds = pickUpRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0,
                                                                     height: CGFloat.greatestFiniteMagnitude))
     pickUpRadioView.frame = CGRect(
@@ -95,9 +96,9 @@ class OAShoppingCartOrderTypeView: UIView {
     
     contactInfoTableView.frame = CGRect(
       x: 0,
-      y: pickUpRadioView.frame.maxY,
+      y: pickUpRadioView.frame.maxY + kOADefaultPadding,
       width: self.bounds.width,
-      height: nextButton.frame.minY - pickUpRadioView.frame.maxY - kOADefaultPadding).integral;
+      height: nextButton.frame.minY - pickUpRadioView.frame.maxY - 2 * kOADefaultPadding).integral;
   }
   
   //MARK: UIGestureRecognizer

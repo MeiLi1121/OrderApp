@@ -30,6 +30,7 @@
 		1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */; };
 		1F1DBE5F1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */; };
 		1F2496321D93931C00A9EB58 /* OAShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */; };
+		1F4551C71E17A2C40061B473 /* OAJSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4551C61E17A2C40061B473 /* OAJSONHelper.swift */; };
 		1F89FB131D616FF4002F50BD /* OAViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89FB121D616FF4002F50BD /* OAViewConstants.swift */; };
 		1F89FB151D619B0D002F50BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89FB141D619B0D002F50BD /* MapKit.framework */; };
 		1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */; };
@@ -101,6 +102,7 @@
 		1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemView.swift; sourceTree = "<group>"; };
 		1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OARadioButtonTextLabelView.swift; sourceTree = "<group>"; };
 		1F2496311D93931C00A9EB58 /* OAShoppingCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartView.swift; sourceTree = "<group>"; };
+		1F4551C61E17A2C40061B473 /* OAJSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAJSONHelper.swift; sourceTree = "<group>"; };
 		1F89FB121D616FF4002F50BD /* OAViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewConstants.swift; sourceTree = "<group>"; };
 		1F89FB141D619B0D002F50BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F8AC56D1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartItemsTableViewCell.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				1F89FB121D616FF4002F50BD /* OAViewConstants.swift */,
 				1FAE46851D6A3B2C005C26A6 /* OAHelpers.swift */,
 				1F1DBE5E1D73F62900A2B2BA /* OARadioButtonTextLabelView.swift */,
+				1F4551C61E17A2C40061B473 /* OAJSONHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				1F066E441D456EA800BDAAD9 /* OAOrderNavigationController.swift in Sources */,
 				1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */,
 				1FC498701DEA04370011760E /* OAUser.swift in Sources */,
+				1F4551C71E17A2C40061B473 /* OAJSONHelper.swift in Sources */,
 				1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */,
 				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
