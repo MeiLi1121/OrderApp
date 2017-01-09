@@ -21,6 +21,8 @@ let kOADefaultPadding: CGFloat = 12.0
 let kOATabBarHeight: CGFloat = 44.0
 let kOADefaultTableViewCellHeight: CGFloat = 44.0
 let kOATopLayoutOffset: CGFloat = 64.0
+let kOANextButtonWidth: CGFloat = 180.0
+let kOANextButtonHeight: CGFloat = 48.0
 
 let OABoldTextFont: UIFont =  UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightBold)
 let OALargeBoldTextFont: UIFont =  UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightBold)

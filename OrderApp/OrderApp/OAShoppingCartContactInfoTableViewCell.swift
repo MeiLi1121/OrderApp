@@ -19,6 +19,7 @@ class OAShoppingCartContactInfoTableViewCell: UITableViewCell {
   
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    self.selectionStyle = .none
     backgroundColor = UIColor.white
     
     fieldNameLabel = UILabel(frame: CGRect.zero)
@@ -52,7 +53,7 @@ class OAShoppingCartContactInfoTableViewCell: UITableViewCell {
       height: self.bounds.height).integral
     
     fieldTextField.frame = CGRect(
-      x: max(fieldNameLabel.frame.maxX, kMaxLabelWidth),
+      x: max(fieldNameLabel.frame.maxX + kOADefaultPadding, kMaxLabelWidth),
       y: 0,
       width: constrainedWidth - fieldNameLabel.frame.maxX - kOADefaultPadding,
       height: self.bounds.height).integral

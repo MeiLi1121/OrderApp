@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 let kContactTableViewInset: CGFloat = 20.0
 let kContactFieldArray: [String] = ["Name", "Street", "City", "State", "Phone", "Email"]
 
 class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrderTypeViewDelegate, UITextFieldDelegate {
   
-  //MARK: Constants
+  //MARK: Private Constants
   private let kCellIdentifier = "ContactInfoTableViewCell"
   private let kContactInfofilePath = "contactInfo.json"
   
@@ -32,6 +33,11 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
     self.title = "Select Order Type"
     self.view.backgroundColor = UIColor.white
     self.automaticallyAdjustsScrollViewInsets = false
+    // remove "back" text from back button
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                            style: .plain,
+                                                            target: nil,
+                                                            action: nil)
     self.syncContactInfoFromDisk()
   }
   
@@ -106,8 +112,36 @@ class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrd
       contactInfo?[cell.fieldNameLabel.text!] = cell.fieldTextField.text
     }
     self.syncContactInfoToDisk(contactInfo)
-    self.navigationController!.pushViewController(OAShoppingCartConfirmationViewController(),
+    self.navigationController!.pushViewController(OAShoppingCartPaymentInfoViewController(),
                                                   animated: true);
+  }
+  
+  //MARK: MKMapViewDelegate
+  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if let annotation = annotation as? OAMapAnnotation {
+      let identifier = "pin"
+      var view: MKPinAnnotationView
+      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        as? MKPinAnnotationView { // 2
+        dequeuedView.annotation = annotation
+        view = dequeuedView
+      } else {
+        // 3
+        view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.canShowCallout = true
+        view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
+      }
+      return view
+    }
+    return nil
+  }
+  
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+               calloutAccessoryControlTapped control: UIControl) {
+    let location = view.annotation as! OAMapAnnotation
+    let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+    location.mapItem().openInMaps(launchOptions: launchOptions)
   }
   
   //MARK: UITextFieldDelegate

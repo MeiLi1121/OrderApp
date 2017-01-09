@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-public protocol OAShoppingCartOrderTypeViewDelegate : UITableViewDataSource, UITableViewDelegate {
+public protocol OAShoppingCartOrderTypeViewDelegate : UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
   func nextButtonTapped(_ sender: UIButton!)
 }
 
@@ -20,12 +21,10 @@ class OAShoppingCartOrderTypeView: UIView {
   private var nextButton: UIButton!
   private var pickUpRadioView: OARadioButtonTextLabelView!
   private var deliverRadioView: OARadioButtonTextLabelView!
+  private var mapView: MKMapView!
+  private var mapNotation: OAMapAnnotation!
   
   weak private var delegate: OAShoppingCartOrderTypeViewDelegate!
-  
-  //MARK: Private Constant
-  private let kNextButtonWidth: CGFloat = 180.0
-  private let kNextButtonHeight: CGFloat = 48.0
   
   //MARK: Life Cycle
   
@@ -68,6 +67,16 @@ class OAShoppingCartOrderTypeView: UIView {
     nextButton.layer.cornerRadius = 4.0
     nextButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
     self.addSubview(nextButton)
+    
+    //configure map view
+    self.mapView = MKMapView()
+    self._centerMapOnLocation( CLLocation(latitude: 34.153494, longitude: -118.758839))
+    self.mapNotation = OAMapAnnotation(title: "Szechuan Place", subtitle: "5639 Kanan Road, Agoura Hills, CA 91301", coordinate: CLLocationCoordinate2D(latitude: 34.153494, longitude: -118.758839))
+    self.mapView.addAnnotation(self.mapNotation)
+    self.mapView.delegate = delegate
+    self.mapView.selectAnnotation(self.mapNotation, animated: false)
+    self.mapView.isHidden = true
+    self.addSubview(self.mapView)
   }
   
   //MARK: Layout
@@ -89,10 +98,16 @@ class OAShoppingCartOrderTypeView: UIView {
       height: pickUpRadioViewBounds.height).integral
     
     nextButton.frame = CGRect(
-      x: self.bounds.width / 2.0 - kNextButtonWidth / 2.0,
-      y: self.bounds.height - kNextButtonHeight - kOATabBarHeight - 20.0,
-      width: kNextButtonWidth,
-      height: kNextButtonHeight).integral
+      x: self.bounds.width / 2.0 - kOANextButtonWidth / 2.0,
+      y: self.bounds.height - kOANextButtonHeight - kOATabBarHeight - 20.0,
+      width: kOANextButtonWidth,
+      height: kOANextButtonHeight).integral
+    
+    self.mapView.frame = CGRect(
+      x: 0.0,
+      y: self.pickUpRadioView.frame.maxY + 2 * kOADefaultPadding,
+      width: self.bounds.width,
+      height: nextButton.frame.minY - pickUpRadioView.frame.maxY - 4 * kOADefaultPadding).integral
     
     contactInfoTableView.frame = CGRect(
       x: 0,
@@ -106,15 +121,27 @@ class OAShoppingCartOrderTypeView: UIView {
   func handlePickUpTap(_ sender: UITapGestureRecognizer) {
     pickUpRadioView.isChecked = true
     deliverRadioView.isChecked = false
+    mapView.isHidden = false
+    contactInfoTableView.isHidden = true
   }
   
   func handleDeliverTap(_ sender: UITapGestureRecognizer) {
     pickUpRadioView.isChecked = false
     deliverRadioView.isChecked = true
+    mapView.isHidden = true
+    contactInfoTableView.isHidden = false
   }
   
   //MARK: Button Action
   func buttonTapped(_ sender: UIButton!) {
     delegate.nextButtonTapped(sender)
+  }
+  
+  //MARK: Private Helpers
+  func _centerMapOnLocation(_ location: CLLocation) {
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                              1000 * 2.0,
+                                                              1000 * 2.0)
+    self.mapView.setRegion(coordinateRegion, animated: true)
   }
 }

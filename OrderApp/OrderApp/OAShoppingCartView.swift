@@ -59,8 +59,8 @@ class OAShoppingCartView: UIView {
     nextButton.frame = CGRect(
       x: self.bounds.width / 2.0 - 180 / 2.0,
       y: self.bounds.height - 20.0 - 48.0 - 44.0,
-      width: 180,
-      height: 48).integral
+      width: kOANextButtonWidth,
+      height: kOANextButtonHeight).integral
     
     let priceAndTipViewBounds = priceAndTipView.sizeThatFits(CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
     priceAndTipView.frame = CGRect(
