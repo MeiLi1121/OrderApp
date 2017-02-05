@@ -24,6 +24,10 @@ let kOATopLayoutOffset: CGFloat = 64.0
 let kOANextButtonWidth: CGFloat = 180.0
 let kOANextButtonHeight: CGFloat = 48.0
 
+let kContactFieldArray: [String] = ["Name", "Street", "City", "State", "Phone", "Email"]
+let kProfileFieldArray: [String] = ["My Account", "Payment", "Food Preference", "Order History"]
+let kContactInfofilePath = "contactInfo.json"
+
 let OABoldTextFont: UIFont =  UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightBold)
 let OALargeBoldTextFont: UIFont =  UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightBold)
 let OAPrimaryTextFont: UIFont =  UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)

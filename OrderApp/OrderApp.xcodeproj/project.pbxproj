@@ -11,7 +11,7 @@
 		1F066E131D45618800BDAAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E121D45618800BDAAD9 /* Assets.xcassets */; };
 		1F066E161D45618800BDAAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F066E141D45618800BDAAD9 /* LaunchScreen.storyboard */; };
 		1F066E2C1D45618800BDAAD9 /* OrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */; };
-		1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */; };
+		1F066E3C1D45638E00BDAAD9 /* OAProfileDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3B1D45638E00BDAAD9 /* OAProfileDetailInfoViewController.swift */; };
 		1F066E3E1D4563C900BDAAD9 /* OAOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */; };
 		1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */; };
 		1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */; };
@@ -54,6 +54,9 @@
 		1FC498781DEA6D900011760E /* OAOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498771DEA6D900011760E /* OAOrder.swift */; };
 		1FC4987A1DEA810A0011760E /* OAOrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC498791DEA810A0011760E /* OAOrderStore.swift */; };
 		1FC4987C1DEA9D850011760E /* OAUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4987B1DEA9D850011760E /* OAUserSession.swift */; };
+		1FD9E02C1E4670BA008E102D /* OAProfileDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9E02B1E4670BA008E102D /* OAProfileDetailInfoView.swift */; };
+		1FD9E02E1E468303008E102D /* OAProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9E02D1E468303008E102D /* OAProfileViewController.swift */; };
+		1FD9E0301E46831E008E102D /* OAProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9E02F1E46831E008E102D /* OAProfileMainView.swift */; };
 		1FF4E3CF1E233024005CA01D /* OAShoppingCartPaymentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4E3CE1E233024005CA01D /* OAShoppingCartPaymentInfoViewController.swift */; };
 		1FF4E3D11E233118005CA01D /* OAShoppingCartPaymentInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4E3D01E233118005CA01D /* OAShoppingCartPaymentInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -85,7 +88,7 @@
 		1F066E271D45618800BDAAD9 /* OrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F066E2B1D45618800BDAAD9 /* OrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITests.swift; sourceTree = "<group>"; };
 		1F066E2D1D45618800BDAAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileViewController.swift; sourceTree = "<group>"; };
+		1F066E3B1D45638E00BDAAD9 /* OAProfileDetailInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileDetailInfoViewController.swift; sourceTree = "<group>"; };
 		1F066E3D1D4563C900BDAAD9 /* OAOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderViewController.swift; sourceTree = "<group>"; };
 		1F066E3F1D4564F700BDAAD9 /* OAMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAMainTabBarController.swift; sourceTree = "<group>"; };
 		1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileNavigationController.swift; sourceTree = "<group>"; };
@@ -129,6 +132,9 @@
 		1FC498771DEA6D900011760E /* OAOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrder.swift; sourceTree = "<group>"; };
 		1FC498791DEA810A0011760E /* OAOrderStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderStore.swift; sourceTree = "<group>"; };
 		1FC4987B1DEA9D850011760E /* OAUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAUserSession.swift; sourceTree = "<group>"; };
+		1FD9E02B1E4670BA008E102D /* OAProfileDetailInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileDetailInfoView.swift; sourceTree = "<group>"; };
+		1FD9E02D1E468303008E102D /* OAProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileViewController.swift; sourceTree = "<group>"; };
+		1FD9E02F1E46831E008E102D /* OAProfileMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAProfileMainView.swift; sourceTree = "<group>"; };
 		1FF4E3CE1E233024005CA01D /* OAShoppingCartPaymentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartPaymentInfoViewController.swift; sourceTree = "<group>"; };
 		1FF4E3D01E233118005CA01D /* OAShoppingCartPaymentInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartPaymentInfoView.swift; sourceTree = "<group>"; };
 		2089C087F06B39F902EF1A52 /* Pods-OrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderApp/Pods-OrderApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,8 +231,8 @@
 		1F066E3A1D4562AF00BDAAD9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				1F066E3B1D45638E00BDAAD9 /* OAProfileViewController.swift */,
-				1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */,
+				1FD9E02A1E467079008E102D /* ViewControllers */,
+				1FD9E0291E46706C008E102D /* Views */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -365,6 +371,25 @@
 				1FC4987B1DEA9D850011760E /* OAUserSession.swift */,
 			);
 			name = DataModels;
+			sourceTree = "<group>";
+		};
+		1FD9E0291E46706C008E102D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FD9E02B1E4670BA008E102D /* OAProfileDetailInfoView.swift */,
+				1FD9E02F1E46831E008E102D /* OAProfileMainView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1FD9E02A1E467079008E102D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F066E3B1D45638E00BDAAD9 /* OAProfileDetailInfoViewController.swift */,
+				1F066E411D456CB300BDAAD9 /* OAProfileNavigationController.swift */,
+				1FD9E02D1E468303008E102D /* OAProfileViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		536F95BB0B0B1C30C2852E56 /* Pods */ = {
@@ -595,9 +620,11 @@
 				1F8AC5761D98A6E000DDFC92 /* OAShoppingCartOrderTypeView.swift in Sources */,
 				1F066E401D4564F700BDAAD9 /* OAMainTabBarController.swift in Sources */,
 				1FAE46841D6A3A28005C26A6 /* OAHomeHoursView.swift in Sources */,
+				1FD9E0301E46831E008E102D /* OAProfileMainView.swift in Sources */,
 				1FF4E3D11E233118005CA01D /* OAShoppingCartPaymentInfoView.swift in Sources */,
 				1FAE46861D6A3B2C005C26A6 /* OAHelpers.swift in Sources */,
 				1F8AC5741D98A0D300DDFC92 /* OAShoppingCartContactInfoTableViewCell.swift in Sources */,
+				1FD9E02C1E4670BA008E102D /* OAProfileDetailInfoView.swift in Sources */,
 				1F066E0C1D45618800BDAAD9 /* AppDelegate.swift in Sources */,
 				1FAE46821D69789E005C26A6 /* OAHomeView.swift in Sources */,
 				1F9303171D740CCD00F3A642 /* OAOrderMoreOrCheckoutViewController.swift in Sources */,
@@ -610,7 +637,7 @@
 				1F089DAC1DC7039800F2877E /* OAShoppingCartConfirmationView.swift in Sources */,
 				1F9303131D73FEE600F3A642 /* OAOrderStepperView.swift in Sources */,
 				1F8AC56E1D978A3F00DDFC92 /* OAShoppingCartItemsTableViewCell.swift in Sources */,
-				1F066E3C1D45638E00BDAAD9 /* OAProfileViewController.swift in Sources */,
+				1F066E3C1D45638E00BDAAD9 /* OAProfileDetailInfoViewController.swift in Sources */,
 				1FC4987A1DEA810A0011760E /* OAOrderStore.swift in Sources */,
 				1F8AC5721D98980D00DDFC92 /* OAShoppingCartOrderTypeViewController.swift in Sources */,
 				1F066E4C1D45779800BDAAD9 /* OAHomeViewController.swift in Sources */,
@@ -621,6 +648,7 @@
 				1FC498701DEA04370011760E /* OAUser.swift in Sources */,
 				1F4551C71E17A2C40061B473 /* OAJSONHelper.swift in Sources */,
 				1FC4986C1DE7FC1B0011760E /* OALoginViewController.swift in Sources */,
+				1FD9E02E1E468303008E102D /* OAProfileViewController.swift in Sources */,
 				1F066E421D456CB300BDAAD9 /* OAProfileNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

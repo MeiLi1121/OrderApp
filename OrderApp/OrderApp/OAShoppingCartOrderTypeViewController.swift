@@ -10,13 +10,11 @@ import UIKit
 import MapKit
 
 let kContactTableViewInset: CGFloat = 20.0
-let kContactFieldArray: [String] = ["Name", "Street", "City", "State", "Phone", "Email"]
 
 class OAShoppingCartOrderTypeViewController: UIViewController, OAShoppingCartOrderTypeViewDelegate, UITextFieldDelegate {
   
   //MARK: Private Constants
   private let kCellIdentifier = "ContactInfoTableViewCell"
-  private let kContactInfofilePath = "contactInfo.json"
   
   //MARK:Properties
   
