@@ -27,6 +27,14 @@ let kOANextButtonHeight: CGFloat = 48.0
 let kContactFieldArray: [String] = ["Name", "Street", "City", "State", "Phone", "Email"]
 let kProfileFieldArray: [String] = ["My Account", "Payment", "Food Preference", "Order History"]
 let kContactInfofilePath = "contactInfo.json"
+let kCardInfoFieldArray: [String] = ["Name on Card", "Card No.", "Exp Date", "CVV"]
+let kBillingAddressFieldArray: [String] = ["Street", "City", "State", "Zip Code"]
+enum PaymentInfoSection: Int {
+    case cardInfoSection = 0
+    case billingAddressSection
+    case numerOfSections
+}
+let kPaymentInfofilePath = "paymentInfo.json"
 
 let OABoldTextFont: UIFont =  UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightBold)
 let OALargeBoldTextFont: UIFont =  UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightBold)

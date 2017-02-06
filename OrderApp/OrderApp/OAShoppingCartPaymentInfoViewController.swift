@@ -8,15 +8,6 @@
 
 import UIKit
 
-let kCardInfoFieldArray: [String] = ["Name on Card", "Card No.", "Exp Date", "CVV"]
-let kBillingAddressFieldArray: [String] = ["Street", "City", "State", "Zip Code"]
-
-enum PaymentInfoSection: Int {
-  case cardInfoSection = 0
-  case billingAddressSection
-  case numerOfSections
-}
-
 class OAShoppingCartPaymentInfoViewController: UIViewController, OAShoppingCartPaymentInfoViewDelegate, UITextFieldDelegate {
   
   //MARK: Private Constants

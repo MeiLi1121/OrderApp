@@ -27,6 +27,11 @@ class OAProfileViewController: UIViewController, OAProfileMainViewDelegate {
         self.title = "Profile"
         self.view.backgroundColor = UIColor.gray
         self.automaticallyAdjustsScrollViewInsets = false
+        // remove "back" text from back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                                style: .plain,
+                                                                target: nil,
+                                                                action: nil)
     }
     
     //MARK: UITableViewDataSource
@@ -67,6 +72,9 @@ class OAProfileViewController: UIViewController, OAProfileMainViewDelegate {
             case 0:
                 self.navigationController!.pushViewController(OAProfileDetailInfoViewController(),
                                                               animated: true);
+            case 1:
+                self.navigationController!.pushViewController(OAProfilePaymentInfoViewController(),
+                                                              animated: true)
             default: break
             }
         }

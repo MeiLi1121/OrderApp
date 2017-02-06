@@ -38,6 +38,17 @@ class OAProfileDetailInfoViewController: UIViewController, OAProfileDetailInfoVi
         self.syncContactInfoFromDisk()
     }
     
+    //MARK: OAProfileDetailInfoViewDelegate
+    
+    func saveButtonTapped(_ sender: UIButton!) {
+        for row in 0..<kContactFieldArray.count {
+            let cell = self.detailInfoView?.contactInfoTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! OAShoppingCartContactInfoTableViewCell
+            detailInfo?[cell.fieldNameLabel.text!] = cell.fieldTextField.text
+        }
+        self.syncContactInfoToDisk(detailInfo)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,7 +76,7 @@ class OAProfileDetailInfoViewController: UIViewController, OAProfileDetailInfoVi
     }
     
     //MARK: UITableViewDelegate
-        
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return kOADefaultTableViewCellHeight;
     }
