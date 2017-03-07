@@ -25,9 +25,11 @@ class OALoginView: UIView {
     
     var containerScrollView: UIScrollView!
     
+    var logoImageView: UIImageView!
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
     
+    let logoWidth: CGFloat = 76.0
     let textFieldWidth: CGFloat = 235.0
     let textFieldHeight: CGFloat = 36.0
     
@@ -44,6 +46,10 @@ class OALoginView: UIView {
         // configure scroll view
         self.containerScrollView = UIScrollView()
         self.addSubview(containerScrollView)
+        
+        // configure logo image view
+        logoImageView = UIImageView(image: UIImage(named:"logo"))
+        self.containerScrollView.addSubview(logoImageView)
         
         // configure user name text fields
         usernameTextField = UITextField()
@@ -90,6 +96,11 @@ class OALoginView: UIView {
     
     //MARK: Layout Views
     override func layoutSubviews() {
+        logoImageView.frame = CGRect(
+            x: (self.bounds.size.width - logoWidth) / 2.0,
+            y: 80.0,
+            width: logoWidth,
+            height: logoWidth)
         usernameTextField.frame = CGRect(
             x: (self.bounds.size.width - textFieldWidth) / 2.0,
             y: 200.0,

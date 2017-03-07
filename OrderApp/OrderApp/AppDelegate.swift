@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //navigationController.viewControllers = [ tabBarController ]
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
+    //window?.rootViewController = loginViewController
     window?.rootViewController = tabBarController
     
     FIRApp.configure()
