@@ -11,29 +11,31 @@ import UIKit
 class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   //MARK:Properties
   
-  var specificCategoryView:OAOrderSpecificCategoryView?
-  var categoryType:String?
+  var specificCategoryView: OAOrderSpecificCategoryView?
+  var categoryType: String?
+  var dishes: NSArray?
   let cellIdentifier = "SpecificCategoryTableViewCell"
   
-  let dishes = [
-    "Egg Roll (4 Pcs)",
-    "Fried Wonton (10 Pcs)",
-    "Paper Wrapped Chicken (6 Pcs)",
-    "Fried Shrimp (6 Pcs)",
-    "Potstickers (10 Pcs)"
-  ]
-  let prices = [
-    "$5.45",
-    "$4.45",
-    "$5.95",
-    "$6.45",
-    "$7.95"
-  ]
+//  let dishes = [
+//    "Egg Roll (4 Pcs)",
+//    "Fried Wonton (10 Pcs)",
+//    "Paper Wrapped Chicken (6 Pcs)",
+//    "Fried Shrimp (6 Pcs)",
+//    "Potstickers (10 Pcs)"
+//  ]
+//  let prices = [
+//    "$5.45",
+//    "$4.45",
+//    "$5.95",
+//    "$6.45",
+//    "$7.95"
+//  ]
   
   //MARK: Life Cycle
-  convenience init(categoryType: String) {
+  convenience init(categoryType: String, dishes: NSArray) {
     self.init()
     self.categoryType = categoryType
+    self.dishes = dishes
   }
   
   override func viewDidLoad() {
@@ -57,7 +59,10 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.dishes.count;
+    if let dishes = self.dishes {
+      return dishes.count
+    }
+    return 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,8 +72,11 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
     if (cell == nil) {
       cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
     }
-    cell!.textLabel!.text = self.dishes[(indexPath as NSIndexPath).row]
-    cell!.detailTextLabel!.text = self.prices[(indexPath as NSIndexPath).row]
+    let currentDish : NSDictionary? = self.dishes?[(indexPath as NSIndexPath).row] as! NSDictionary?
+    let name = currentDish?["name"] as! String?
+    let price = currentDish?["price"] as! String?
+    cell!.textLabel!.text = name
+    cell!.detailTextLabel!.text = price
     cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     return cell!
   }
@@ -80,7 +88,8 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: self.dishes[(indexPath as NSIndexPath).row]),
+    let currentDish : NSDictionary? = self.dishes?[(indexPath as NSIndexPath).row] as! NSDictionary?
+    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: (currentDish?["name"] as! String?)!),
                                                   animated: true);
     tableView.deselectRow(at: indexPath, animated: true);
   }

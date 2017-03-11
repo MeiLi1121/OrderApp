@@ -1,0 +1,88 @@
+{
+  "categories" : [
+    {
+      "name" : "Appetizers",
+      "quantity" : "12",
+      "dishes" : [
+        {
+          "name" : "A1. Egg Roll (4 Pcs)",
+          "price" : "5.45"
+        },
+        {
+          "name" : "A2. Fried Wonton (10 Pcs)",
+          "price" : "4.45"
+        }
+      ]
+    },
+    {
+      "name" : "Entree",
+      "quantity" : "10",
+      "dishes" : [
+        {
+          "name" : "Kung Pao Vegetable",
+          "price" : "9.00"
+        },
+        {
+          "name" : "Kung Pao Tofu",
+          "price" : "9.00"
+        }
+      ]
+    },
+    {
+      "name" : "House Special",
+      "quantity" : "12",
+      "dishes" : [
+        {
+          "name" : "H1. Home Style Tofu",
+          "price" : "8.95"
+        },
+        {
+          "name" : "H2. Ma Po Tofu",
+          "price" : "8.95"
+        }
+      ]
+    },
+    {
+      "name" : "Rice and Noodle",
+      "quantity" : "15",
+      "dishes" : [
+        {
+          "name" : "R1. Vegetable Fried Rice",
+          "price" : "6.95"
+        },
+        {
+          "name" : "R1. Chicken Fried Rice",
+          "price" : "7.95"
+        }
+      ]
+    },
+    {
+      "name" : "Soup and Noodle",
+      "quantity" : "18",
+      "dishes" : [
+        {
+          "name" : "S1. Wor Wonton Soup",
+          "price" : "5.95"
+        },
+        {
+          "name" : "S2. Chicken Corn Soup",
+          "price" : "5.95"
+        }
+      ]
+    },
+    {
+      "name" : "Vegetable",
+      "quantity" : "5",
+      "dishes" : [
+        {
+          "name" : "Spicy Cabbage",
+          "price" : "8.95"
+        },
+        {
+          "name" : "Garlic String Beans",
+          "price" : "8.95"
+        }
+      ]
+    }
+  ]
+}

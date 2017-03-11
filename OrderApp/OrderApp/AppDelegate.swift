@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //window?.rootViewController = loginViewController
     window?.rootViewController = tabBarController
     
-    FIRApp.configure()
-    FIRDatabase.database().persistenceEnabled = true
+    //FIRApp.configure()
+    //FIRDatabase.database().persistenceEnabled = true
     UIApplication.shared.statusBarStyle = .lightContent
     return true
   }

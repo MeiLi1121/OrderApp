@@ -25,6 +25,7 @@
 		1F066E561D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */; };
 		1F089DAA1DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F089DA91DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift */; };
 		1F089DAC1DC7039800F2877E /* OAShoppingCartConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F089DAB1DC7039800F2877E /* OAShoppingCartConfirmationView.swift */; };
+		1F17083F1E73BDC1004FA874 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F17083E1E73BDC1004FA874 /* categories.json */; };
 		1F1DBE571D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */; };
 		1F1DBE5B1D73EDD400A2B2BA /* OAOrderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */; };
 		1F1DBE5D1D73EFA200A2B2BA /* OAOrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */; };
@@ -104,6 +105,7 @@
 		1F066E551D45B78200BDAAD9 /* OAOrderSpecificCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderSpecificCategoryView.swift; sourceTree = "<group>"; };
 		1F089DA91DC7037300F2877E /* OAShoppingCartComfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartComfirmationViewController.swift; sourceTree = "<group>"; };
 		1F089DAB1DC7039800F2877E /* OAShoppingCartConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAShoppingCartConfirmationView.swift; sourceTree = "<group>"; };
+		1F17083E1E73BDC1004FA874 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		1F1DBE561D72AA4800A2B2BA /* OADishGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OADishGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F1DBE5A1D73EDD400A2B2BA /* OAOrderItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemViewController.swift; sourceTree = "<group>"; };
 		1F1DBE5C1D73EFA200A2B2BA /* OAOrderItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAOrderItemView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		1F066E0A1D45618800BDAAD9 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				1F17083E1E73BDC1004FA874 /* categories.json */,
 				1FC4986E1DEA04080011760E /* DataModels */,
 				1FC4986D1DE815AE0011760E /* OrderApp.entitlements */,
 				1FC498661DE7F7670011760E /* Login */,
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F066E161D45618800BDAAD9 /* LaunchScreen.storyboard in Resources */,
+				1F17083F1E73BDC1004FA874 /* categories.json in Resources */,
 				1F066E131D45618800BDAAD9 /* Assets.xcassets in Resources */,
 				1F987FAB1D4D44BD00BD3F54 /* GoogleService-Info.plist in Resources */,
 			);

@@ -16,11 +16,13 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   
   var menuCategoryView:OAOrderMenuCategoryView?
   let cellIdentifier = "MenuCategoryTableViewCell"
+  var categories: NSArray?
   
   // TODO: define keys from server
   let categoryDBName = "categories"
   let nameKey = "name"
   let quantityKey = "quantity"
+  let dishesKey = "dishes"
   
   fileprivate var _ref: FIRDatabaseReference!
   fileprivate var _refHandle: FIRDatabaseHandle!
@@ -55,7 +57,10 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return _categories.count;
+    if let categories = self.categories {
+      return categories.count
+    }
+    return 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,12 +71,13 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
       cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
     }
     // Unpack message from Firebase DataSnapshot
-    let categorySnapshot: FIRDataSnapshot! = _categories[(indexPath as NSIndexPath).row]
-    let category = categorySnapshot.value as! Dictionary<String, String>
-    let name = category[nameKey] as String!
-    let quantity = category[quantityKey] as String!
-    cell!.textLabel?.text = name
-    cell!.detailTextLabel?.text = quantity
+//    let categorySnapshot: FIRDataSnapshot! = _categories[(indexPath as NSIndexPath).row]
+//    let category = categorySnapshot.value as! Dictionary<String, String>
+//    let name = category[nameKey] as String!
+//    let quantity = category[quantityKey] as String!
+    let currentCategory : NSDictionary? = self.categories?[(indexPath as NSIndexPath).row] as! NSDictionary?
+    cell!.textLabel?.text = currentCategory?[nameKey] as! String?
+    cell!.detailTextLabel?.text = currentCategory?[quantityKey] as! String?
     cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     return cell!
   }
@@ -84,21 +90,34 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let categorySnapshot: FIRDataSnapshot! = _categories[(indexPath as NSIndexPath).row]
-    let category = categorySnapshot.value as! Dictionary<String, String>
-    let name = category[nameKey] as String!
-    self.navigationController!.pushViewController(OAOrderSpecificCategoryViewController(categoryType:name!),
+//    let categorySnapshot: FIRDataSnapshot! = _categories[(indexPath as NSIndexPath).row]
+//    let category = categorySnapshot.value as! Dictionary<String, String>
+//    let name = category[nameKey] as String!
+    
+    let currentCategory : NSDictionary? = self.categories?[(indexPath as NSIndexPath).row] as! NSDictionary?
+    let name = currentCategory?[nameKey] as! String?
+    let dishes : NSArray = currentCategory?[dishesKey] as! NSArray
+    self.navigationController!.pushViewController(OAOrderSpecificCategoryViewController(categoryType:name!, dishes: dishes),
                                                   animated: true);
     tableView.deselectRow(at: indexPath, animated: true);
   }
   
   //MARK: Firebase
   func configureDatabase() {
-    _ref = FIRDatabase.database().reference()
-    // Listen for new messages in the Firebase database
-    _refHandle = _ref.child(categoryDBName).observe(.childAdded, with: { (snapshot) -> Void in
-      self._categories.append(snapshot)
-      self.menuCategoryView?.categoryTableView!.insertRows(at: [IndexPath(row: self._categories.count-1, section: 0)], with: .automatic)
-    })
+    //    _ref = FIRDatabase.database().reference()
+    //    // Listen for new messages in the Firebase database
+    //    _refHandle = _ref.child(categoryDBName).observe(.childAdded, with: { (snapshot) -> Void in
+    //      self._categories.append(snapshot)
+    //      self.menuCategoryView?.categoryTableView!.insertRows(at: [IndexPath(row: self._categories.count-1, section: 0)], with: .automatic)
+    //    })
+    if let filePath = Bundle.main.path(forResource: "categories", ofType: "json"), let data = NSData(contentsOfFile: filePath) {
+      do {
+        let data = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
+        self.categories = data?[categoryDBName] as! NSArray?
+      }
+      catch {
+        //Handle error
+      }
+    }
   }
 }
