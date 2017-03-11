@@ -47,7 +47,7 @@ class OAOrderViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   deinit {
-    _ref.child(categoryDBName).removeObserver(withHandle: _refHandle)
+    //_ref.child(categoryDBName).removeObserver(withHandle: _refHandle)
   }
   
   //MARK: UITableViewDataSource

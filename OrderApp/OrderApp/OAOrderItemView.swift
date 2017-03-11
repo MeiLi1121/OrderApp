@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol OAOrderItemViewDelegate : NSObjectProtocol {
+public protocol OAOrderItemViewDelegate : OAOrderStepperViewDelegate {
   func addToCartButtonTapped(_ sender: UIButton!)
 }
 
@@ -27,14 +27,18 @@ class OAOrderItemView: UIView {
   var addItemButton: UIButton!
   
   var priceLabel: UILabel!
+  var price: Double!
+  var count: Int!
 
   weak var delegate: OAOrderItemViewDelegate!
   
   //MARK: Life Cycle
-  convenience init(itemName: String, delegate: OAOrderItemViewDelegate) {
+  convenience init(itemName: String, price: Double, delegate: OAOrderItemViewDelegate) {
     self.init(frame: CGRect.zero)
     
     self.delegate = delegate
+    self.price = price
+    self.count = 1
     
     // configure scroll view
     containerScrollView = UIScrollView()
@@ -55,13 +59,13 @@ class OAOrderItemView: UIView {
     containerScrollView.addSubview(self.stepperSeparator)
     
     //configure item radio views
-    smallItemRadioView = OARadioButtonTextLabelView(text: "Small", isChecked: true)
-    containerScrollView.addSubview(smallItemRadioView)
-    largeItemRadioView = OARadioButtonTextLabelView(text: "Large", isChecked: false)
-    containerScrollView.addSubview(largeItemRadioView)
+//    smallItemRadioView = OARadioButtonTextLabelView(text: "Small", isChecked: true)
+//    containerScrollView.addSubview(smallItemRadioView)
+//    largeItemRadioView = OARadioButtonTextLabelView(text: "Large", isChecked: false)
+//    containerScrollView.addSubview(largeItemRadioView)
     
     //configure stepper view
-    stepperView = OAOrderStepperView(text: "1")
+    stepperView = OAOrderStepperView(text: "1", delegate: self.delegate)
     containerScrollView.addSubview(stepperView)
     
     // configure button view
@@ -75,7 +79,7 @@ class OAOrderItemView: UIView {
     
     //configure price label
     priceLabel = UILabel()
-    priceLabel.text = "Current Total: $7.95"
+    priceLabel.text = "Price: $" + String(self.price)
     priceLabel.font = OAPrimaryTextFont
     containerScrollView.addSubview(priceLabel)
   }
@@ -98,23 +102,23 @@ class OAOrderItemView: UIView {
         width: self.bounds.width,
         height: 1.0 / UIScreen.main.scale).integral
     
-    let smallItemRadioViewBounds = smallItemRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0, height: CGFloat.greatestFiniteMagnitude))
-    smallItemRadioView.frame = CGRect(
-        x: self.bounds.width / 4.0,
-        y: itemNameSeparator.frame.maxY + 36,
-        width: self.bounds.width / 4.0,
-        height: smallItemRadioViewBounds.height).integral
-    
-    largeItemRadioView.frame = CGRect(
-        x: self.bounds.width / 2.0,
-        y: itemNameSeparator.frame.maxY + 36,
-        width: self.bounds.width / 4.0,
-        height: smallItemRadioViewBounds.height).integral
+//    let smallItemRadioViewBounds = smallItemRadioView.sizeThatFits(CGSize(width: self.bounds.width / 4.0, height: CGFloat.greatestFiniteMagnitude))
+//    smallItemRadioView.frame = CGRect(
+//        x: self.bounds.width / 4.0,
+//        y: itemNameSeparator.frame.maxY + 36,
+//        width: self.bounds.width / 4.0,
+//        height: smallItemRadioViewBounds.height).integral
+//    
+//    largeItemRadioView.frame = CGRect(
+//        x: self.bounds.width / 2.0,
+//        y: itemNameSeparator.frame.maxY + 36,
+//        width: self.bounds.width / 4.0,
+//        height: smallItemRadioViewBounds.height).integral
     
     let stepperViewBounds = stepperView.sizeThatFits(CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
     stepperView.frame = CGRect(
         x: 0.0,
-        y: smallItemRadioView.frame.maxY + 36,
+        y: itemNameSeparator.frame.maxY + 36,
         width: self.bounds.width,
         height: stepperViewBounds.height).integral
     
@@ -138,6 +142,21 @@ class OAOrderItemView: UIView {
         height: priceLabelBounds.height).integral
     
     self.containerScrollView.frame = self.bounds
+  }
+  
+  //MARK: Public APIs
+  func addItem() {
+    if (self.count < 20) {
+      self.count = self.count + 1
+      self.stepperView.setItemCount(itemCount: self.count)
+    }
+  }
+  
+  func removeItem() {
+    if (self.count > 0) {
+      self.count = self.count - 1
+      self.stepperView.setItemCount(itemCount: self.count)
+    }
   }
   
   //MARK: Button Action

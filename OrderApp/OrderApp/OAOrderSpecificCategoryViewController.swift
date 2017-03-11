@@ -16,21 +16,6 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   var dishes: NSArray?
   let cellIdentifier = "SpecificCategoryTableViewCell"
   
-//  let dishes = [
-//    "Egg Roll (4 Pcs)",
-//    "Fried Wonton (10 Pcs)",
-//    "Paper Wrapped Chicken (6 Pcs)",
-//    "Fried Shrimp (6 Pcs)",
-//    "Potstickers (10 Pcs)"
-//  ]
-//  let prices = [
-//    "$5.45",
-//    "$4.45",
-//    "$5.95",
-//    "$6.45",
-//    "$7.95"
-//  ]
-  
   //MARK: Life Cycle
   convenience init(categoryType: String, dishes: NSArray) {
     self.init()
@@ -76,7 +61,7 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
     let name = currentDish?["name"] as! String?
     let price = currentDish?["price"] as! String?
     cell!.textLabel!.text = name
-    cell!.detailTextLabel!.text = price
+    cell!.detailTextLabel!.text = "$" + price!
     cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     return cell!
   }
@@ -89,7 +74,8 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let currentDish : NSDictionary? = self.dishes?[(indexPath as NSIndexPath).row] as! NSDictionary?
-    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: (currentDish?["name"] as! String?)!),
+    let price = currentDish?["price"] as! String?
+    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: (currentDish?["name"] as! String?)!, price: Double(price!)!),
                                                   animated: true);
     tableView.deselectRow(at: indexPath, animated: true);
   }

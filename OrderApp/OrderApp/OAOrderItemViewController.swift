@@ -11,19 +11,21 @@ import UIKit
 class OAOrderItemViewController: UIViewController, OAOrderItemViewDelegate {
   
   var itemName: String!
+  var price: Double!
   
   var orderItemView:OAOrderItemView?
   
   //MARK: Life Cycle
-  convenience init(itemName: String) {
+  convenience init(itemName: String, price: Double) {
     self.init()
     self.itemName = itemName
+    self.price = price
   }
   
   //MARK: View Controller
   
   override func loadView() {
-    orderItemView = OAOrderItemView(itemName: itemName, delegate: self)
+    orderItemView = OAOrderItemView(itemName: itemName, price: price, delegate: self)
     self.view = self.orderItemView
   }
   
@@ -43,6 +45,14 @@ class OAOrderItemViewController: UIViewController, OAOrderItemViewDelegate {
   func addToCartButtonTapped(_ sender: UIButton!) {
     self.navigationController!.pushViewController(OAOrderMoreOrCheckoutViewController(),
                                                   animated: true);
+  }
+  
+  func addSignTapped() {
+    self.orderItemView?.addItem()
+  }
+  
+  func minusSignTapped() {
+    self.orderItemView?.removeItem()
   }
 
 }
