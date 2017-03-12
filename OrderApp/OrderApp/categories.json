@@ -5,10 +5,12 @@
       "quantity" : "12",
       "dishes" : [
         {
+          "id" : "1",
           "name" : "A1. Egg Roll (4 Pcs)",
           "price" : "5.45"
         },
         {
+          "id" : "2",
           "name" : "A2. Fried Wonton (10 Pcs)",
           "price" : "4.45"
         }
@@ -19,10 +21,12 @@
       "quantity" : "10",
       "dishes" : [
         {
+          "id" : "3",
           "name" : "Kung Pao Vegetable",
           "price" : "9.00"
         },
         {
+          "id" : "4",
           "name" : "Kung Pao Tofu",
           "price" : "9.00"
         }
@@ -33,10 +37,12 @@
       "quantity" : "12",
       "dishes" : [
         {
+          "id" : "5",
           "name" : "H1. Home Style Tofu",
           "price" : "8.95"
         },
         {
+          "id" : "6",
           "name" : "H2. Ma Po Tofu",
           "price" : "8.95"
         }
@@ -47,10 +53,12 @@
       "quantity" : "15",
       "dishes" : [
         {
+          "id" : "7",
           "name" : "R1. Vegetable Fried Rice",
           "price" : "6.95"
         },
         {
+          "id" : "8",
           "name" : "R1. Chicken Fried Rice",
           "price" : "7.95"
         }
@@ -61,10 +69,12 @@
       "quantity" : "18",
       "dishes" : [
         {
+          "id" : "9",
           "name" : "S1. Wor Wonton Soup",
           "price" : "5.95"
         },
         {
+          "id" : "10",
           "name" : "S2. Chicken Corn Soup",
           "price" : "5.95"
         }
@@ -75,10 +85,12 @@
       "quantity" : "5",
       "dishes" : [
         {
+          "id" : "11",
           "name" : "Spicy Cabbage",
           "price" : "8.95"
         },
         {
+          "id" : "12",
           "name" : "Garlic String Beans",
           "price" : "8.95"
         }

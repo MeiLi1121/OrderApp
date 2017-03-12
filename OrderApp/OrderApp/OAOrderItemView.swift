@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol OAOrderItemViewDelegate : OAOrderStepperViewDelegate {
-  func addToCartButtonTapped(_ sender: UIButton!)
+    func addToCartButtonTapped(_ sender: UIButton!, count: Int!)
 }
 
 class OAOrderItemView: UIView {
@@ -33,11 +33,11 @@ class OAOrderItemView: UIView {
   weak var delegate: OAOrderItemViewDelegate!
   
   //MARK: Life Cycle
-  convenience init(itemName: String, price: Double, delegate: OAOrderItemViewDelegate) {
+  convenience init(orderItem: OAOrderItem, delegate: OAOrderItemViewDelegate) {
     self.init(frame: CGRect.zero)
     
     self.delegate = delegate
-    self.price = price
+    self.price = orderItem.price
     self.count = 1
     
     // configure scroll view
@@ -46,7 +46,7 @@ class OAOrderItemView: UIView {
     
     //configure item name label
     itemNameLabel = UILabel()
-    itemNameLabel.text = itemName
+    itemNameLabel.text = orderItem.name
     itemNameLabel.font = OALargeBoldTextFont
     containerScrollView.addSubview(itemNameLabel)
     
@@ -145,6 +145,7 @@ class OAOrderItemView: UIView {
   }
   
   //MARK: Public APIs
+  
   func addItem() {
     if (self.count < 20) {
       self.count = self.count + 1
@@ -160,7 +161,8 @@ class OAOrderItemView: UIView {
   }
   
   //MARK: Button Action
+  
   func buttonTapped(_ sender: UIButton!) {
-    delegate.addToCartButtonTapped(sender)
+    self.delegate.addToCartButtonTapped(sender, count: self.count)
   }
 }

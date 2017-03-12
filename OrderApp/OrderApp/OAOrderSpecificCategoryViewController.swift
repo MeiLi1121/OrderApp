@@ -75,7 +75,10 @@ class OAOrderSpecificCategoryViewController: UIViewController, UITableViewDataSo
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let currentDish : NSDictionary? = self.dishes?[(indexPath as NSIndexPath).row] as! NSDictionary?
     let price = currentDish?["price"] as! String?
-    self.navigationController!.pushViewController(OAOrderItemViewController(itemName: (currentDish?["name"] as! String?)!, price: Double(price!)!),
+    let itemId = currentDish?["id"] as! String?
+    let itemName = currentDish?["name"] as! String?
+    let orderItem = OAOrderItem(id: itemId!, name: itemName!, price: Double(price!)!)
+    self.navigationController!.pushViewController(OAOrderItemViewController(orderItem: orderItem),
                                                   animated: true);
     tableView.deselectRow(at: indexPath, animated: true);
   }
