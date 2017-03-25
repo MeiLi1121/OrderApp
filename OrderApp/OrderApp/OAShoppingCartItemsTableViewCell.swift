@@ -8,6 +8,11 @@
 
 import UIKit
 
+public protocol OAShoppingCartItemsTableViewCellDelegate : NSObjectProtocol {
+  func addSignTapped(cell: UITableViewCell)
+  func minusSignTapped(cell: UITableViewCell)
+}
+
 class OAShoppingCartItemsTableViewCell: UITableViewCell {
   
   let padding: CGFloat = 5
@@ -17,6 +22,17 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
   
   var addSignView: UIImageView!
   var minusSignView: UIImageView!
+  weak var delegate: OAShoppingCartItemsTableViewCellDelegate!
+  var count: Int!
+  var orderItem: OAOrderItem! {
+    didSet {
+      nameLabel.text = orderItem.name
+      priceLabel.text = "$" + String(orderItem.price)
+      count = (OAOrderStore.sharedInstance.order.orderDictionary?[orderItem])!
+      quantityLabel.text = String(count)
+      self.setNeedsLayout()
+    }
+  }
   
   let signWidth: CGFloat = 28.0
   
@@ -39,10 +55,16 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
     // configure sign views
     addSignView = UIImageView(image: UIImage(named:"addSign"))
     addSignView.contentMode = UIViewContentMode.scaleAspectFit
+    addSignView.isUserInteractionEnabled = true
+    addSignView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                            action: #selector(self.addSignTapped)))
     contentView.addSubview(addSignView)
     
     minusSignView = UIImageView(image: UIImage(named:"minusSign"))
     minusSignView.contentMode = UIViewContentMode.scaleAspectFit
+    minusSignView.isUserInteractionEnabled = true
+    minusSignView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(self.minusSignTapped)))
     contentView.addSubview(minusSignView)
   }
   
@@ -86,4 +108,32 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
       width: signWidth,
       height: signWidth).integral
   }
+  
+  //MARK: Action Handle
+  func addSignTapped() {
+    self.delegate.addSignTapped(cell: self)
+  }
+  
+  func minusSignTapped() {
+    self.delegate.minusSignTapped(cell: self)
+  }
+  
+  //MARK: Public APIs
+  
+  func addItem() {
+    if (self.count < 20) {
+      self.count = self.count + 1
+      self.quantityLabel.text = String(count)
+      self.setNeedsLayout()
+    }
+  }
+  
+  func removeItem() {
+    if (self.count > 0) {
+      self.count = self.count - 1
+      self.quantityLabel.text = String(count)
+      self.setNeedsLayout()
+    }
+  }
+  
 }
