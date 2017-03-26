@@ -124,6 +124,7 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
     if (self.count < 20) {
       self.count = self.count + 1
       self.quantityLabel.text = String(count)
+      OAOrderStore.sharedInstance.addOrderItem(self.orderItem, count: 1)
       self.setNeedsLayout()
     }
   }
@@ -132,6 +133,7 @@ class OAShoppingCartItemsTableViewCell: UITableViewCell {
     if (self.count > 0) {
       self.count = self.count - 1
       self.quantityLabel.text = String(count)
+      OAOrderStore.sharedInstance.removeOrderItem(self.orderItem, count: 1)
       self.setNeedsLayout()
     }
   }

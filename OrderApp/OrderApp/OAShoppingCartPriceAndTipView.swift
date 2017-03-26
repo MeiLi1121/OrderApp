@@ -14,8 +14,8 @@ class OAShoppingCartPriceAndTipView: UIView {
   var orderTaxTextLabel: UILabel!
   var orderTaxPriceLabel: UILabel!
   
-  var orderTipsTextLabel: UILabel!
-  var orderTipAmountLabel: UILabel!
+//  var orderTipsTextLabel: UILabel!
+//  var orderTipAmountLabel: UILabel!
   
   var orderTotalWithTipTextLabel: UILabel!
   var orderTotalWithTipPriceLabel: UILabel!
@@ -37,7 +37,7 @@ class OAShoppingCartPriceAndTipView: UIView {
     self.addSubview(orderTotalTextLabel)
     
     orderTotalPriceLabel = UILabel()
-    orderTotalPriceLabel.text = "$21.25"
+    orderTotalPriceLabel.text = "$" + String(format: "%.2f", OAOrderStore.sharedInstance.order.currentOrderTotalPrice())
     orderTotalPriceLabel.font = OAPrimaryTextFont
     self.addSubview(orderTotalPriceLabel)
     
@@ -47,31 +47,31 @@ class OAShoppingCartPriceAndTipView: UIView {
     self.addSubview(orderTaxTextLabel)
     
     orderTaxPriceLabel = UILabel()
-    orderTaxPriceLabel.text = "$2.15"
+    orderTaxPriceLabel.text = "$" + String(format: "%.2f",OAOrderStore.sharedInstance.order.currentOrderTax())
     orderTaxPriceLabel.font = OAPrimaryTextFont
     self.addSubview(orderTaxPriceLabel)
     
-    orderTipsTextLabel = UILabel()
-    orderTipsTextLabel.text = orderTipsTextLabelTitle
-    orderTipsTextLabel.font = OAPrimaryTextFont
-    self.addSubview(orderTipsTextLabel)
+//    orderTipsTextLabel = UILabel()
+//    orderTipsTextLabel.text = orderTipsTextLabelTitle
+//    orderTipsTextLabel.font = OAPrimaryTextFont
+//    self.addSubview(orderTipsTextLabel)
     
-    for i in 0 ..< 3 {
-      let tipsButton = UIButton()
-      if (i == 0) {
-        tipsButton.setTitle("15%", for: UIControlState())
-      } else if (i == 1) {
-        tipsButton.setTitle("18%", for: UIControlState())
-      } else {
-        tipsButton.setTitle("20%", for: UIControlState())
-      }
-      tipsButton.setTitleColor(UIColor.white, for: UIControlState())
-      tipsButton.backgroundColor = OATabBarBarTintColor
-      tipsButton.titleLabel?.font = OABoldTextFont
-      tipsButton.layer.cornerRadius = 4.0
-      self.addSubview(tipsButton)
-      orderTipsButtonArray.append(tipsButton)
-    }
+//    for i in 0 ..< 3 {
+//      let tipsButton = UIButton()
+//      if (i == 0) {
+//        tipsButton.setTitle("15%", for: UIControlState())
+//      } else if (i == 1) {
+//        tipsButton.setTitle("18%", for: UIControlState())
+//      } else {
+//        tipsButton.setTitle("20%", for: UIControlState())
+//      }
+//      tipsButton.setTitleColor(UIColor.white, for: UIControlState())
+//      tipsButton.backgroundColor = OATabBarBarTintColor
+//      tipsButton.titleLabel?.font = OABoldTextFont
+//      tipsButton.layer.cornerRadius = 4.0
+//      self.addSubview(tipsButton)
+//      orderTipsButtonArray.append(tipsButton)
+//    }
   }
   
   //MARK: Layout Views
@@ -111,22 +111,22 @@ class OAShoppingCartPriceAndTipView: UIView {
     
     currentY = orderTaxTextLabel.frame.maxY + 4.0
     
-    var xOffset = self.bounds.size.width - 32.0
-    for i in 0 ..< 3 {
-      let tipsButton = orderTipsButtonArray[i]
-      tipsButton.frame = CGRect(
-        x: xOffset - 56.0,
-        y: currentY,
-        width: 56,
-        height: 26).integral
-      xOffset -= 56.0 + 8.0
-    }
-    let orderTipsTextLabelBounds = orderTipsTextLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 26.0))
-    orderTipsTextLabel.frame = CGRect(
-      x: xOffset - orderTipsTextLabelBounds.width,
-      y: currentY,
-      width: orderTipsTextLabelBounds.width,
-      height: 26.0).integral
+//    var xOffset = self.bounds.size.width - 32.0
+//    for i in 0 ..< 3 {
+//      let tipsButton = orderTipsButtonArray[i]
+//      tipsButton.frame = CGRect(
+//        x: xOffset - 56.0,
+//        y: currentY,
+//        width: 56,
+//        height: 26).integral
+//      xOffset -= 56.0 + 8.0
+//    }
+//    let orderTipsTextLabelBounds = orderTipsTextLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 26.0))
+//    orderTipsTextLabel.frame = CGRect(
+//      x: xOffset - orderTipsTextLabelBounds.width,
+//      y: currentY,
+//      width: orderTipsTextLabelBounds.width,
+//      height: 26.0).integral
   }
   
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -136,7 +136,13 @@ class OAShoppingCartPriceAndTipView: UIView {
     height += orderTotalPriceLabelBounds.height + 4.0
     let orderTaxPriceLabelBounds = orderTaxPriceLabel.sizeThatFits(CGSize(width: constrainedWidth, height: 16))
     height += orderTaxPriceLabelBounds.height + 4.0
-    height += 26.0 + kOADefaultPadding
+    height += kOADefaultPadding
     return CGSize(width: size.width, height: height)
+  }
+  
+  func updatePriceAndTax() {
+    orderTotalPriceLabel.text = "$" + String(format: "%.2f", OAOrderStore.sharedInstance.order.currentOrderTotalPrice())
+    orderTaxPriceLabel.text = "$" + String(format: "%.2f",OAOrderStore.sharedInstance.order.currentOrderTax())
+    self.setNeedsLayout()
   }
 }

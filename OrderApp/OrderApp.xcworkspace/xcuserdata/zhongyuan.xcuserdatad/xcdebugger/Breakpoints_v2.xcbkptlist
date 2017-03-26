@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrderApp/OAShoppingCartItemsTableViewCell.swift"
-            timestampString = "512156575.183623"
+            filePath = "OrderApp/OAOrder.swift"
+            timestampString = "512200720.593349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "layoutSubviews()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "currentOrderTotalPrice()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

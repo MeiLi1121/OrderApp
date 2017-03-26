@@ -75,11 +75,14 @@ class OAShoppingCartViewController: UIViewController, OAShoppingCartViewDelegate
   func addSignTapped(cell: UITableViewCell) {
     let itemCell = cell as? OAShoppingCartItemsTableViewCell
     itemCell?.addItem()
+    self.shoppingCartView?.priceAndTipView.updatePriceAndTax()
+    
   }
   
   func minusSignTapped(cell: UITableViewCell) {
     let itemCell = cell as? OAShoppingCartItemsTableViewCell
     itemCell?.removeItem()
+    self.shoppingCartView?.priceAndTipView.updatePriceAndTax()
   }
   
 }
